@@ -1,0 +1,51 @@
+
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+set guifontwide=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+set guioptions-=r
+set guioptions-=L
+set guioptions-=e
+
+if !has('nvim')
+    set antialias
+    set guipty
+endif
+
+let python_highlight_all=1
+set foldmethod=indent
+set foldlevel=99
+let g:SimpylFold_docstring_preview=1
+set fileformat=unix
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+nnoremap <esc>j <c-w><c-j>
+nnoremap <esc>k <c-w><c-k>
+nnoremap <esc>l <c-w><c-l>
+nnoremap <esc>h <c-w><c-h>
+nnoremap <tab> gt
+nnoremap <s-tab> gT
+
+map <C-t> <plug>NERDTreeTabsToggle<CR>
+nunmap <C-e>
+nmap <C-p> :<C-u>Unite -start-insert file buffer<CR>
+nmap <leader>p :<C-u>Unite -start-insert file_rec/async:!<CR>
+
+" Personal Mappings
+nnoremap <leader>ev :pedit ~/.vimrc.local<cr>
+nnoremap <leader>sv :source ~/.vimrc.local<cr>
+
+" Typing help
+inoremap jk <esc>
+inoremap <c-d> <esc>cc
+inoremap <c-o> <esc>o
+inoremap <c-e> <end>
+inoremap <c-a> <home>
+
+" Selections
+nnoremap <space> viw
+nnoremap <esc><space> za
+
+" Operator extensions
+onoremap p i(
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>

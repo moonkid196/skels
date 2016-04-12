@@ -1,0 +1,167 @@
+# Global values
+set certificate_file="~/.mutt.d/cert.pem"
+
+# GPG/PGP Integration
+set pgp_decode_command="gpg2 -q --batch -o - %f"
+set pgp_verify_command="gpg2 -q --batch -o - --verify %s %f"
+set pgp_decrypt_command="gpg2 -q --batch -o - %f"
+set pgp_sign_command="gpg2 -q --batch -o - --armor --detach-sign --textmode -u %a %f"
+set pgp_encrypt_only_command="pgpewrap gpg2 --batch -q -o - -e --textmode --armor --always-trust --encrypt-to %a -- -r %r -- %f"
+set pgp_encrypt_sign_command="pgpewrap gpg2 --batch -q --textmode --output - -es --armor --always-trust --encrypt-to %a -r %r -- %f"
+set pgp_import_command="gpg2 -q --import -v %f"
+set pgp_export_command="gpg2 -q --export --armor %r"
+set pgp_verify_key_command="gpg2 -q --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg2 -q --batch --with-colons --list-keys %r" 
+set pgp_list_secring_command="gpg2 -q --batch --with-colons --list-secret-keys %r" 
+set pgp_autosign=yes
+set pgp_sign_as=08E503C1
+set pgp_replyencrypt=yes
+set pgp_timeout=1800
+set pgp_good_sign="^gpg: Good signature from"
+
+#color status brightyellow blue
+#color tilde blue default
+#color index cyan default ~N
+#color index magenta default ~D
+#color index yellow default "~Q ! ~F"
+#color index red default ~F
+#color hdrdefault black cyan
+#color header brightgreen default "^Subject:.*$"
+#color header default red "^X-Spam-Level:.*$"
+#color quoted0 magenta default
+#color quoted1 yellow default
+#color quoted2 green default
+#color quoted3 cyan default
+#color tree red default
+#color bold black white
+#color underline brightred default
+
+set index_format="%4C %Z %{%b %d %R} %-25.25L (%?l?%4l&%4c?) %s"
+
+ignore *
+unignore from: subject to cc date x-mailer x-url user-agent return-path x-original-to reply-to x-spam-level
+
+# Disable Broken Protocols
+set ssl_use_sslv3=no
+set ssl_use_tlsv1=no
+
+# Prompt before quitting, defaulting to yes
+set quit=ask-yes
+
+# Don't complain about no subject
+set abort_nosubject=no
+
+# Don't prompt before composing
+set autoedit
+
+# Don't confirm bounaces
+set bounce=yes
+
+# Don't add extra headers to bounced messages
+unset bounce_delivered
+
+# Expunge when closing folders
+set delete=yes
+
+# Allow header editing during composition
+set edit_headers
+
+# Quote original message in forward
+set forward_quote
+
+# Include message in reply
+set include=yes
+
+# Do not mark unread messages 'old'
+set mark_old=no
+
+# Place to save messages
+set message_cachedir="~/.mutt/cache"
+
+# Header cache
+set header_cache="~/.mutt/headers"
+
+# Check all subscribed folders
+set imap_check_subscribed
+
+# Don't postpone messages by default...
+# Prefer to use the postpone-message function 
+# (initially bound to the P key)
+set postpone=no
+
+# Don't confirm saving a message
+unset confirmappend
+
+# Don't mark wrapped lines (its annoying)
+unset markers
+
+# Set the pager to keep 5 lines of context when paging
+# (scrolling) or displaying
+set pager_context=5
+
+# Keeps from moving to the next message when pressing the 
+# next-page button at the end of a message
+set pager_stop
+
+# Set up the sidebar (though this doesn't seem to work)
+# Also, the order may matter
+#set sidebar_width=35
+#set sidebar_visible
+
+# Set search context (top of the screen is too extreme)
+set search_context=5
+
+# Do not ask to recall postponed messages when composing new mail
+# Instead, I prefer to use the recall-postponed-message function 
+# (defaults to the R key)
+set recall=no
+
+# use vim with 90 character boundary
+set editor='vim -c "set textwidth=90"'
+
+# Sorting options
+set sort="threads"
+set sort_aux="last-date"
+
+# Progress bars
+set read_inc=50
+set write_inc=50
+
+bind index,pager <Esc><Tab> next-unread-mailbox
+
+bind pager <Up> previous-line
+bind pager <Down> next-line
+bind pager  half-up
+bind pager  half-down
+bind index,pager - half-up
+bind index,pager <Space> half-down
+bind index,pager  previous-page
+bind index,pager  next-page
+bind index,pager n next-entry
+bind index,pager p previous-entry
+bind index J next-line
+bind index K previous-line
+bind index j next-entry
+bind index k previous-entry
+bind pager K top
+bind pager J bottom
+bind pager j next-line
+bind pager k previous-line
+
+bind generic,pager <Esc><Esc> what-key
+bind generic,pager <Esc>? help
+bind generic,pager ? search-reverse
+bind generic,pager < search-opposite
+bind generic,pager > search-next
+
+account-hook . "source ~/.mutt.d/accounts/common"
+
+macro index,pager,browser,generic <ESC>h <enter-command>"unhook folder-hook"<enter><change-folder>imap://imap.baburke.net<Enter> "Change to baburke.net email"
+
+macro index,pager y <change-folder>?<tab>
+bind browser y exit
+
+source ~/.mutt.d/mutt-colors-solarized-dark-16.muttrc
+
+# Aliases
+set alias_file="~/.mutt.d/aliases"

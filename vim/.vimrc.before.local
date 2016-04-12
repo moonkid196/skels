@@ -1,0 +1,7 @@
+let g:spf13_no_autochdir=1
+let g:spf13_no_easyWindows=1
+let g:spf13_no_fastTabs=1
+set rtp+=~/.vim/bundle/Vundle.vim
+let g:airline_theme = 'badwolf'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1

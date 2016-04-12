@@ -1,0 +1,39 @@
+# vim:filetype=muttrc
+# Specific account info for "Home" email
+unalternates *
+alternates bburke@baburke.net
+
+unsubscribe *
+
+set realname="Bryan Burke"
+set from="bburke@baburke.net"
+set spoolfile="imap://imap.baburke.net/"
+set folder="imap://imap.baburke.net/INBOX"
+set imap_user="bburke"
+unset ssl_client_cert
+unset imap_authenticators
+
+set smtp_url="smtp://bburke@smtp.baburke.net"
+
+# Postpone messages to the server
+set postponed="=Drafts"
+
+# Where to save sent messages
+set record="=Sent"
+
+# Where to save deleted messages
+#set trash="=Trash"
+
+# Signature file
+set signature="~/.mutt/signatures/home"
+
+unmailboxes *
+mailboxes = =Admin =Facebook =Junk
+
+# Various folder actions
+folder-hook . "set sort=threads"
+folder-hook . "set sort_aux=last-date-received"
+
+folder-hook Admin 'push "<delete-pattern>!~N ~d >60d\n"'
+
+macro index,pager <esc>E <change-folder>=Trash<enter><delete-pattern>"~d >30d"<enter> "Empty Trash (older than 30 days)"

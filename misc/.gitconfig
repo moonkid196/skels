@@ -1,0 +1,7 @@
+[user]
+	name = Bryan Burke
+	email = bburke@baburke.net
+[color]
+	ui = auto
+[push]
+	default = simple

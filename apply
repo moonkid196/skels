@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Applying skels files to $HOME"
+
+umask 077
+
+tar -cf - -C home . | tar -xvf - -C "$HOME"
