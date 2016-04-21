@@ -146,6 +146,14 @@
     augroup END
 " }}}
 
+" Groovy Options {{{
+    augroup filetype_groovy
+        autocmd!
+        autocmd FileType groovy setlocal autoindent
+        autocmd FileType groovy setlocal smartindent
+    augroup END
+" }}}
+
 " Markdown Options {{{
     augroup filetype_markdown
         autocmd!
