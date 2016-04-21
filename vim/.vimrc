@@ -245,7 +245,6 @@
     nnoremap <f7> :call baburke#SetLight()<cr>
 
     " Typing help
-    inoremap jk <esc>
     inoremap <c-d> <esc>cc
     inoremap <c-o> <esc>o
     inoremap <c-e> <end>
