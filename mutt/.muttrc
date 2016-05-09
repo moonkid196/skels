@@ -36,6 +36,10 @@ set pgp_good_sign="^gpg: Good signature from"
 #color bold black white
 #color underline brightred default
 
+macro generic <F6> <enter-command>"source ~/.mutt.d/mutt-colors-solarized-dark-16.muttrc"<enter><refresh>
+macro generic <F7> <enter-command>"source ~/.mutt.d/mutt-colors-solarized-light-16.muttrc"<enter><refresh>
+source ~/.mutt.d/mutt-colors-solarized-light-16.muttrc
+
 set index_format="%4C %Z %{%b %d %R} %-25.25L (%?l?%4l&%4c?) %s"
 
 ignore *
@@ -160,8 +164,6 @@ macro index,pager,browser,generic <ESC>h <enter-command>"unhook folder-hook"<ent
 
 macro index,pager y <change-folder>?<tab>
 bind browser y exit
-
-source ~/.mutt.d/mutt-colors-solarized-dark-16.muttrc
 
 # Aliases
 set alias_file="~/.mutt.d/aliases"

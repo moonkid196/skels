@@ -5,13 +5,13 @@
 
 # basic colors ---------------------------------------------------------
 color error         red             default     # error messages
-color tilde         black           default     # blank spaces in pager
+color tilde         white           default     # blank spaces in pager
 color message       magenta         default     # operational messages
 color markers       red             white       # wrapped-lines-marker
 color attachment    white           default     # attachment summaries
 color search        brightmagenta   default     # search highlighting
-color status        yellow          black       # status lines
-color indicator     black           yellow      # index message highlight
+color status        yellow          white       # status lines
+color indicator     white           yellow      # index message highlight
 color tree          yellow          default     # arrow in threads
 
 # basic monocolor screen
@@ -29,14 +29,14 @@ color index         red             default         "~F"            # flagged me
 color index         brightcyan      default         "~v~(!~N)"      # collapsed thread with no unread
 color index         yellow          default         "~v~(~N)"       # collapsed thread with some unread
 color index         green           default         "~N~v~(~N)"     # collapsed thread with unread parent
-color index         brightcyan      black           "~v~(~F)!~N"    # collapsed thread with flagged, no unread
-color index         yellow          black           "~v~(~F~N)"     # collapsed thread with some unread & flagged
-color index         green           black           "~N~v~(~F~N)"   # collapsed thread with unread parent & flagged
+color index         brightcyan      white           "~v~(~F)!~N"    # collapsed thread with flagged, no unread
+color index         yellow          white           "~v~(~F~N)"     # collapsed thread with some unread & flagged
+color index         green           white           "~N~v~(~F~N)"   # collapsed thread with unread parent & flagged
 color index         yellow          red             "~v~(~D)"       # thread with deleted (doesn't differentiate between all or partial)
 
 # message headers ------------------------------------------------------
-color hdrdefault    black           cyan
-color header        green           black           "^Subject"
+color hdrdefault    white           cyan
+color header        green           white           "^Subject"
 
 # body -----------------------------------------------------------------
 color quoted        blue            default         
@@ -46,6 +46,6 @@ color quoted3       red             default
 color quoted4       brightred       default         
 
 color signature     brightgreen     default         
-color bold          black           default         
-color underline     black           default         
+color bold          white           default         
+color underline     white           default         
 color normal        default         default         
