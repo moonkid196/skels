@@ -6,7 +6,7 @@
 
 " Configuration needed at bundle load time {{{
     if !exists('g:colors_light')
-        let g:colors_light = 0
+        let g:colors_light = 1
     endif
 
     if g:colors_light
@@ -108,7 +108,7 @@
     set sidescroll=0
     set sidescrolloff=10
     set number
-    set wildmode=list:longest
+    set wildmode=list,longest
     set cursorline
     let mapleader = ','
     set cpoptions=
@@ -121,6 +121,8 @@
     set ignorecase
     set listchars+=tab:>-
     set incsearch
+    set viminfo='1000,f1,<500,:100,@100,/100,!,%
+    syntax sync fromstart
 " }}}
 
 " NVim specifics {{{
@@ -151,6 +153,17 @@
         autocmd!
         autocmd FileType groovy setlocal autoindent
         autocmd FileType groovy setlocal smartindent
+        autocmd FileType groovy syntax sync fromstart
+    augroup END
+" }}}
+
+" Ruby Options {{{
+    augroup filetype_ruby
+        autocmd!
+        autocmd FileType ruby setlocal autoindent
+        autocmd FileType ruby setlocal smartindent
+        autocmd FileType ruby setlocal nospell
+        autocmd FileType ruby syntax sync fromstart
     augroup END
 " }}}
 
@@ -175,6 +188,7 @@
         autocmd!
         autocmd FileType json setlocal autoindent
         autocmd FileType json setlocal smartindent
+        autocmd FileType json syntax sync fromstart
     augroup END
 " }}}
 
@@ -187,6 +201,14 @@
     nnoremap <C-p> :<C-u>Unite -start-insert file buffer<cr>
     nnoremap <leader>p :<C-u>Unite -start-insert file_rec/async:!<cr>
     nnoremap <leader>t :TagbarToggle<cr>
+" }}}
+
+" Sessions {{{
+    nnoremap <leader>s1 :mksession! ~/.vim/sessions/1.vim<cr>:wviminfo! ~/.vim/sessions/1.viminfo<cr>
+    nnoremap <leader>s2 :mksession! ~/.vim/sessions/2.vim<cr>:wviminfo! ~/.vim/sessions/2.viminfo<cr>
+
+    nnoremap <leader>o1 :source ~/.vim/sessions/1.vim<cr>:rviminfo! ~/.vim/sessions/1.viminfo<cr>
+    nnoremap <leader>o2 :source ~/.vim/sessions/2.vim<cr>:rviminfo! ~/.vim/sessions/2.viminfo<cr>
 " }}}
 
 " Better key mappings {{{
