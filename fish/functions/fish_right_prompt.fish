@@ -1,14 +1,14 @@
 function fish_right_prompt
-    switch "$fish_bind_mode"
+	switch "$fish_bind_mode"
         case "default"
-            set_color --bold cyan
-            echo -n "normal"
+            set_color yellow
+            echo -n command
         case "insert"
-            set_color purple
+            set_color --bold green
             echo -n insert
         case "visual"
-            set_color --background red white
-            echo -n "$fish_bind_mode"
+            set_color magenta
+            echo -n visual
     end
     set_color normal
 
