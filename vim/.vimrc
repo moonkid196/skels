@@ -250,8 +250,8 @@
     nnoremap <leader>/ :setlocal invhlsearch<cr>
 
     " Set light/dark
-    nnoremap <f6> :call baburke#SetDark()<cr>
-    nnoremap <f7> :call baburke#SetLight()<cr>
+    nnoremap <f6> :set background=dark<cr>
+    nnoremap <f7> :set background=light<cr>
 
     " Typing help
     inoremap <c-d> <esc>cc
