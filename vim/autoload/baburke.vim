@@ -1,13 +1,10 @@
 
 " Functions {{{
     function baburke#SetDark()
-        let g:colors_light = 0
-        source ~/.vimrc
+        set background=dark
     endfunction
 
     function baburke#SetLight()
-        let g:colors_light = 1
-        source ~/.vimrc
+        set background=light
     endfunction
 " }}}
-

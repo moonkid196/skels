@@ -5,15 +5,9 @@
 " }}}
 
 " Configuration needed at bundle load time {{{
-    if !exists('g:colors_light')
-        let g:colors_light = 1
-    endif
-
-    if g:colors_light
-        let g:airline_theme = 'base16_solarized_light'
-    else
-        let g:airline_theme = 'base16_solarized'
-    endif
+    set background=light
+    let g:solarized_base16=1
+    let g:airline_theme = 'base16_solarized'
 
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
@@ -84,12 +78,6 @@
 " For now, just putting these on by default {{{
     syntax on
     set laststatus=2
-
-    if g:colors_light
-        set background=light
-    else
-        set background=dark
-    endif
 
     "let g:solarized_termcolors=256
     "let g:solarized_visibility='high'
