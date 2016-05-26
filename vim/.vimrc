@@ -5,7 +5,7 @@
 " }}}
 
 " Configuration needed at bundle load time {{{
-    set background=light
+    set background=dark
     let g:solarized_base16=1
     let g:airline_theme = 'base16_solarized'
 
@@ -177,6 +177,18 @@
         autocmd FileType json setlocal autoindent
         autocmd FileType json setlocal smartindent
         autocmd FileType json syntax sync fromstart
+    augroup END
+" }}}
+
+" YAML File Options {{{
+    augroup filetype_yaml
+        autocmd!
+        autocmd FileType yaml setlocal tabstop=2
+        autocmd FileType yaml setlocal softtabstop=2
+        autocmd FileType yaml setlocal shiftwidth=2
+        autocmd FileType yaml setlocal autoindent
+        autocmd FileType yaml setlocal smartindent
+        autocmd FileType yaml syntax sync fromstart
     augroup END
 " }}}
 
