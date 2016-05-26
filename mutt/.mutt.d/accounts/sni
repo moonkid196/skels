@@ -1,0 +1,35 @@
+# vim:filetype=muttrc
+# Specific account info for "Home" email
+unalternates *
+alternates bburke@scrippsnetworks.com
+
+unsubscribe *
+
+set realname="Bryan Burke"
+set from="bburke@scrippsnetworks.com"
+set spoolfile="imaps://bburke@scrippsnetworks.com@outlook.office365.com/"
+set folder="imaps://bburke@scrippsnetworks.com@outlook.office365.com/"
+unset imap_user
+unset ssl_client_cert
+unset imap_authenticators
+
+set smtp_url="smtp://bburke@scrippsnetworks.com@smtp.office365.com:587/"
+
+# Postpone messages to the server
+set postponed="+Drafts"
+
+# Where to save sent messages
+set record="+Sent Items"
+
+# Where to save deleted messages
+#set trash="=Trash"
+
+# Signature file
+set signature="~/.mutt/signatures/sni"
+
+unmailboxes *
+mailboxes =
+
+# Various folder actions
+folder-hook . "set sort=threads"
+folder-hook . "set sort_aux=last-date-received"
