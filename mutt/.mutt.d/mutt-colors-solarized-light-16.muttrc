@@ -4,15 +4,15 @@
 # suffer the consequences of weird color issues. use "mutt -v" to check this.
 
 # basic colors ---------------------------------------------------------
-color error         red             default     # error messages
-color tilde         white           default     # blank spaces in pager
-color message       magenta         default     # operational messages
-color markers       red             white       # wrapped-lines-marker
-color attachment    white           default     # attachment summaries
-color search        brightmagenta   default     # search highlighting
+color error         red             brightwhite # error messages
+color tilde         brightcyan      brightwhite # blank spaces in pager
+color message       magenta         brightwhite # operational messages
+color markers       red             black       # wrapped-lines-marker
+color attachment    black           brightwhite # attachment summaries
+color search        brightmagenta   brightwhite # search highlighting
 color status        yellow          white       # status lines
-color indicator     white           yellow      # index message highlight
-color tree          yellow          default     # arrow in threads
+color indicator     brightwhite     yellow      # index message highlight
+color tree          yellow          brightwhite # arrow in threads
 
 # basic monocolor screen
 mono  bold          bold
@@ -21,31 +21,31 @@ mono  indicator     reverse
 mono  error         bold
 
 # index ----------------------------------------------------------------
-color index         brightred       default         "~E | ~D"       # expired/deleted messages
-color index         blue            default         "~N"            # new messages
-color index         brightmagenta   default         "~Q !~F"        # messages that have been replied to
-color index         brightyellow    default         "~v"            # messages part of a collapsed thread
-color index         red             default         "~F"            # flagged messages
-color index         brightcyan      default         "~v~(!~N)"      # collapsed thread with no unread
-color index         yellow          default         "~v~(~N)"       # collapsed thread with some unread
-color index         green           default         "~N~v~(~N)"     # collapsed thread with unread parent
+color index         brightred       brightwhite     "~E | ~D"       # expired/deleted messages
+color index         blue            brightwhite     "~N"            # new messages
+color index         brightmagenta   brightwhite     "~Q !~F"        # messages that have been replied to
+color index         brightyellow    brightwhite     "~v"            # messages part of a collapsed thread
+color index         red             brightwhite     "~F"            # flagged messages
+color index         brightcyan      brightwhite     "~v~(!~N)"      # collapsed thread with no unread
+color index         yellow          brightwhite     "~v~(~N)"       # collapsed thread with some unread
+color index         green           brightwhite     "~N~v~(~N)"     # collapsed thread with unread parent
 color index         brightcyan      white           "~v~(~F)!~N"    # collapsed thread with flagged, no unread
 color index         yellow          white           "~v~(~F~N)"     # collapsed thread with some unread & flagged
 color index         green           white           "~N~v~(~F~N)"   # collapsed thread with unread parent & flagged
 color index         yellow          red             "~v~(~D)"       # thread with deleted (doesn't differentiate between all or partial)
 
 # message headers ------------------------------------------------------
-color hdrdefault    white           cyan
-color header        green           white           "^Subject"
+color hdrdefault    brightwhite     cyan
+color header        green           brightwhite     "^Subject"
 
 # body -----------------------------------------------------------------
-color quoted        blue            default         
-color quoted1       cyan            default         
-color quoted2       yellow          default         
-color quoted3       red             default         
-color quoted4       brightred       default         
+color quoted        blue            brightwhite
+color quoted1       cyan            brightwhite
+color quoted2       yellow          brightwhite
+color quoted3       red             brightwhite
+color quoted4       brightred       brightwhite
 
-color signature     brightgreen     default         
-color bold          white           default         
-color underline     white           default         
-color normal        default         default         
+color signature     brightcyan      brightwhite
+color bold          brightgreen     brightwhite
+color underline     brightgreen     white
+color normal        brightyellow    brightwhite

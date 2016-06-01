@@ -19,26 +19,13 @@ set pgp_replyencrypt=yes
 set pgp_timeout=1800
 set pgp_good_sign="^gpg: Good signature from"
 
-#color status brightyellow blue
-#color tilde blue default
-#color index cyan default ~N
-#color index magenta default ~D
-#color index yellow default "~Q ! ~F"
-#color index red default ~F
-#color hdrdefault black cyan
-#color header brightgreen default "^Subject:.*$"
-#color header default red "^X-Spam-Level:.*$"
-#color quoted0 magenta default
-#color quoted1 yellow default
-#color quoted2 green default
-#color quoted3 cyan default
-#color tree red default
-#color bold black white
-#color underline brightred default
-
+macro generic <F1> <enter-command>"source ~/.mutt.d/accounts/home"<enter><refresh>
+macro generic <F2> <enter-command>"source ~/.mutt.d/accounts/sni"<enter><refresh>
 macro generic <F6> <enter-command>"source ~/.mutt.d/mutt-colors-solarized-dark-16.muttrc"<enter><refresh>
 macro generic <F7> <enter-command>"source ~/.mutt.d/mutt-colors-solarized-light-16.muttrc"<enter><refresh>
-source ~/.mutt.d/mutt-colors-solarized-light-16.muttrc
+
+# Default Color
+source ~/.mutt.d/mutt-colors-solarized-dark-16.muttrc
 
 set index_format="%4C %Z %{%b %d %R} %-25.25L (%?l?%4l&%4c?) %s"
 
@@ -157,10 +144,6 @@ bind generic,pager <Esc>? help
 bind generic,pager ? search-reverse
 bind generic,pager < search-opposite
 bind generic,pager > search-next
-
-account-hook . "source ~/.mutt.d/accounts/common"
-
-macro index,pager,browser,generic <ESC>h <enter-command>"unhook folder-hook"<enter><change-folder>imap://imap.baburke.net<Enter> "Change to baburke.net email"
 
 macro index,pager y <change-folder>?<tab>
 bind browser y exit
