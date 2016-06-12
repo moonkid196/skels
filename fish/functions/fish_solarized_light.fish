@@ -8,7 +8,7 @@ function fish_solarized_light
     set -U fish_color_param blue
     set -U fish_color_comment cyan --bold
     set -U fish_color_match red --bold
-    set -U fish_color_search_match --background=white
+    set -U fish_color_search_match --background=black
     set -U fish_color_selection --background=yellow
     set -U fish_color_autosuggestion blue --bold
     set -U fish_color_operator yellow
