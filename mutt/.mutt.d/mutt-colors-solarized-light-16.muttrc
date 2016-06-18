@@ -21,7 +21,7 @@ mono  indicator     reverse
 mono  error         bold
 
 # index ----------------------------------------------------------------
-color index         brightred       brightwhite     "~E | ~D"       # expired/deleted messages
+color index         red             brightwhite     "~E | ~D"       # expired/deleted messages
 color index         blue            brightwhite     "~N"            # new messages
 color index         brightmagenta   brightwhite     "~Q !~F"        # messages that have been replied to
 color index         brightyellow    brightwhite     "~v"            # messages part of a collapsed thread
