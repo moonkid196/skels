@@ -43,7 +43,6 @@
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'The-NERD-Commenter'
     Plugin 'Auto-Pairs'
-    Plugin 'fish.vim'
     Plugin 'PIV'
     Plugin 'pythoncomplete'
     Plugin 'luochen1990/rainbow'
