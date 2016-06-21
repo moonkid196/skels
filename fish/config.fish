@@ -25,6 +25,8 @@ set -xg LESS "-emiSRX"
 set -xg VISUAL vim
 set -xg EDITOR vim
 set -xg CLICOLOR true
-set -xg LSCOLORS "gxfxcxdxbxegedabagacad"
+set -xg LSCOLORS "exfxFxBxcxbxdxabagacad"
 
 test -t 1; and startagent
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
