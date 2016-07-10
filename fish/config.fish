@@ -27,6 +27,10 @@ set -xg EDITOR vim
 set -xg CLICOLOR true
 set -xg LSCOLORS "exfxFxBxcxbxdxabagacad"
 
-test -t 1; and startagent
+if test "$FISH_BBURKE_STARTAGENT" = "true"
+  test -t 1; and startagent
+end
+
+dircolors_solarized_dark
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
