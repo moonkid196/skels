@@ -21,21 +21,14 @@
     Plugin 'vim-scripts/indentpython.vim'
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'nvie/vim-flake8'
-    Plugin 'spf13/spf13-vim.git'
-    Plugin 'jmcantrell/vim-virtualenv'
     Plugin 'hynek/vim-python-pep8-indent'
     Plugin 'Shougo/unite.vim'
     Plugin 'Shougo/vimshell'
     Plugin 'Shougo/vimproc.vim'
     Plugin 'vim-python-virtualenv'
-    Plugin 'Puppet-Syntax-Highlighting'
-    Plugin 'Markdown'
-    Plugin 'preview'
     Plugin 'tfnico/vim-gradle'
-    Plugin 'Shougo/deoplete.nvim'
     Plugin 'scrooloose/syntastic'
     Plugin 'jnurmine/Zenburn'
-    Plugin 'altercation/vim-colors-solarized'
     Plugin 'scrooloose/nerdtree'
     Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'tpope/vim-fugitive'
@@ -43,16 +36,11 @@
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'The-NERD-Commenter'
     Plugin 'Auto-Pairs'
-    Plugin 'PIV'
     Plugin 'pythoncomplete'
-    Plugin 'luochen1990/rainbow'
-    Plugin 'Tabular'
-    Plugin 'vim-colorschemes'
+    Plugin 'flazz/vim-colorschemes'
     Plugin 'css3-syntax-plus'
     Plugin 'EasyMotion'
     Plugin 'Enhanced-Javascript-syntax'
-    Plugin 'vim-json-bundle'
-    Plugin 'Markdown-syntax'
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'mhinz/vim-signify'
     Plugin 'TagBar'
@@ -95,7 +83,7 @@
     set sidescroll=0
     set sidescrolloff=10
     set number
-    set wildmode=list,longest
+    set wildmode=longest,list
     set cursorline
     let mapleader = ','
     set cpoptions=
