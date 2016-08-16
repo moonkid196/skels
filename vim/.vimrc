@@ -94,6 +94,7 @@
     set backspace=indent,eol,start
     set hidden
     set ignorecase
+    set smartcase
     set listchars+=tab:>-
     set incsearch
     set viminfo='1000,f1,<500,:100,@100,/100,!,%
