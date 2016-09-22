@@ -1,5 +1,5 @@
 function startagent
-    set -l _ssh_agent "$HOME/.ssh/agent.sh"
+    set -l _ssh_agent "$HOME/.ssh/agent.fish"
     set -l _ssh_user (id -u)
 
 #    if test -S "$SSH_AUTH_SOCK"

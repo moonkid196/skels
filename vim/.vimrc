@@ -7,7 +7,7 @@
 " Configuration needed at bundle load time {{{
     set background=dark
     let g:solarized_base16=1
-    let g:airline_theme = 'base16_solarized'
+    let g:airline_theme = 'molokai'
 
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
@@ -44,7 +44,6 @@
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'mhinz/vim-signify'
     Plugin 'TagBar'
-    Plugin 'avakhov/vim-yaml'
 
     call vundle#end()
     filetype plugin indent on
@@ -52,13 +51,12 @@
 
 " GUI Options {{{
     if has("gui_running")
-        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
-        set guifontwide=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+        set guifontwide=DejaVu\ Sans\ Mono\ for\ Powerline:h12
         set guioptions-=r
         set guioptions-=L
         set guioptions-=e
         set antialias
-        set guipty
     endif
 " }}}
 
@@ -70,7 +68,7 @@
     "let g:solarized_visibility='high'
     "let g:solarized_contrast='high'
     "let g:solarized_termtrans=1
-    colorscheme solarized
+    colorscheme Monokai
     set fileformat=unix
     set encoding=utf-8
     set foldlevel=99
