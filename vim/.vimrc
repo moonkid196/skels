@@ -77,7 +77,10 @@
     set shiftwidth=4
     set tabstop=4
     set softtabstop=4
-    set nowrap
+    set wrap
+    set linebreak
+    set breakindent
+    let &showbreak = '... '
     set sidescroll=0
     set sidescrolloff=10
     set number
