@@ -26,6 +26,9 @@ set -xg VISUAL vim
 set -xg EDITOR vim
 set -xg CLICOLOR true
 set -xg LSCOLORS "exfxFxBxcxbxdxabagacad"
+set -xg GPG_TTY (tty)
+
+pgrep -x -q gpg-agent; or gpg-agent --daemon -c --pinentry-program /opt/local/bin/pinentry-curses
 
 if test "$FISH_BBURKE_STARTAGENT" = "true"
   test -t 1; and startagent

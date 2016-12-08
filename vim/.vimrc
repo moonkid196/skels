@@ -7,7 +7,7 @@
 " Configuration needed at bundle load time {{{
     set background=dark
     let g:solarized_base16=1
-    let g:airline_theme = 'molokai'
+    let g:airline_theme = 'base16_solarized'
 
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
@@ -68,7 +68,7 @@
     "let g:solarized_visibility='high'
     "let g:solarized_contrast='high'
     "let g:solarized_termtrans=1
-    colorscheme Monokai
+    colorscheme solarized
     set fileformat=unix
     set encoding=utf-8
     set foldlevel=99
