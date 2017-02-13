@@ -1,0 +1,91 @@
+diff --git a/autoload/airline/themes/base16_solarized.vim b/autoload/airline/themes/base16_solarized.vim
+index 81edd56..8026496 100644
+--- a/autoload/airline/themes/base16_solarized.vim
++++ b/autoload/airline/themes/base16_solarized.vim
+@@ -1,14 +1,27 @@
+ " vim-airline template by chartoin (http://github.com/chartoin)
+ " Base 16 Solarized Scheme by Ethan Schoonover (http://ethanschoonover.com/solarized)
+ let g:airline#themes#base16_solarized#palette = {}
+-let s:gui00 = "#002b36"
+-let s:gui01 = "#073642"
+-let s:gui02 = "#586e75"
+-let s:gui03 = "#657b83"
+-let s:gui04 = "#839496"
+-let s:gui05 = "#93a1a1"
+-let s:gui06 = "#eee8d5"
+-let s:gui07 = "#fdf6e3"
++
++if &background ==# 'dark'
++    let s:gui00 = "#002b36"
++    let s:gui01 = "#073642"
++    let s:gui02 = "#586e75"
++    let s:gui03 = "#657b83"
++    let s:gui04 = "#839496"
++    let s:gui05 = "#93a1a1"
++    let s:gui06 = "#eee8d5"
++    let s:gui07 = "#fdf6e3"
++elseif &background ==# 'light'
++    let s:gui07 = "#002b36"
++    let s:gui06 = "#073642"
++    let s:gui05 = "#586e75"
++    let s:gui04 = "#657b83"
++    let s:gui03 = "#839496"
++    let s:gui02 = "#93a1a1"
++    let s:gui01 = "#eee8d5"
++    let s:gui00 = "#fdf6e3"
++endif
++
+ let s:gui08 = "#dc322f"
+ let s:gui09 = "#cb4b16"
+ let s:gui0A = "#b58900"
+@@ -18,22 +31,34 @@ let s:gui0D = "#268bd2"
+ let s:gui0E = "#6c71c4"
+ let s:gui0F = "#d33682"
+ 
+-let s:cterm00 = 17
+-let s:cterm01 = 23
+-let s:cterm02 = 60
+-let s:cterm03 = 66
+-let s:cterm04 = 102
+-let s:cterm05 = 109
+-let s:cterm06 = 224
+-let s:cterm07 = 230
+-let s:cterm08 = 166
+-let s:cterm09 = 166
+-let s:cterm0A = 136
+-let s:cterm0B = 100
+-let s:cterm0C = 36
+-let s:cterm0D = 32
+-let s:cterm0E = 12
+-let s:cterm0F = 168
++if &background ==# 'dark'
++    let s:cterm00 = 8
++    let s:cterm01 = 0
++    let s:cterm02 = 10
++    let s:cterm03 = 11
++    let s:cterm04 = 12
++    let s:cterm05 = 14
++    let s:cterm06 = 7
++    let s:cterm07 = 15
++elseif &background ==# 'light'
++    let s:cterm07 = 8
++    let s:cterm06 = 0
++    let s:cterm05 = 10
++    let s:cterm04 = 11
++    let s:cterm03 = 12
++    let s:cterm02 = 14
++    let s:cterm01 = 7
++    let s:cterm00 = 15
++endif
++
++let s:cterm08 = 1
++let s:cterm09 = 9
++let s:cterm0A = 3
++let s:cterm0B = 2
++let s:cterm0C = 6
++let s:cterm0D = 4
++let s:cterm0E = 13
++let s:cterm0F = 5
+ 
+ let s:N1   = [ s:gui01, s:gui0B, s:cterm01, s:cterm0B ]
+ let s:N2   = [ s:gui06, s:gui02, s:cterm06, s:cterm02 ]
