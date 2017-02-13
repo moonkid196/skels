@@ -22,9 +22,6 @@
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'nvie/vim-flake8'
     Plugin 'hynek/vim-python-pep8-indent'
-    Plugin 'Shougo/unite.vim'
-    Plugin 'Shougo/vimshell'
-    Plugin 'Shougo/vimproc.vim'
     Plugin 'vim-python-virtualenv'
     Plugin 'tfnico/vim-gradle'
     Plugin 'scrooloose/syntastic'
@@ -44,6 +41,7 @@
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'mhinz/vim-signify'
     Plugin 'TagBar'
+    Plugin 'ctrlpvim/ctrlp.vim'
 
     call vundle#end()
     filetype plugin indent on
@@ -186,9 +184,10 @@
     let g:ycm_autoclose_preview_window_after_completion=1
     nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
     nnoremap <C-t> :NERDTreeToggle<cr>
-    nnoremap <C-p> :<C-u>Unite -start-insert file buffer<cr>
-    nnoremap <leader>p :<C-u>Unite -start-insert file_rec/async:!<cr>
     nnoremap <leader>t :TagbarToggle<cr>
+    "let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlPLastMode'
+    let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 " }}}
 
 " Sessions {{{
