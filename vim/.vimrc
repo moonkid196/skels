@@ -42,6 +42,7 @@
     Plugin 'mhinz/vim-signify'
     Plugin 'TagBar'
     Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
     call vundle#end()
     filetype plugin indent on
@@ -111,7 +112,6 @@
 " Python Options {{{
     augroup filetype_python
         autocmd!
-        autocmd FileType python setlocal nowrap
         autocmd FileType python setlocal nospell
         autocmd FileType python setlocal number
         autocmd FileType python let b:python_highlight_all=1
@@ -119,6 +119,7 @@
         autocmd FileType python setlocal foldlevel=0
         autocmd FileType python setlocal autoindent
         autocmd FileType python setlocal smartindent
+        autocmd FileType python setlocal textwidth=100
         inoremap # X#
     augroup END
 " }}}
