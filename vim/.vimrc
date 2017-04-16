@@ -50,8 +50,8 @@
 
 " GUI Options {{{
     if has("gui_running")
-        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
-        set guifontwide=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+        set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h10
+        set guifontwide=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h10
         set guioptions-=r
         set guioptions-=L
         set guioptions-=e
