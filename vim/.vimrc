@@ -8,6 +8,7 @@
     set background=dark
     let g:solarized_base16=1
     let g:airline_theme = 'base16_solarized'
+    "let g:airline_theme = 'base16_monokai'
 
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
@@ -27,7 +28,6 @@
     Plugin 'scrooloose/syntastic'
     Plugin 'jnurmine/Zenburn'
     Plugin 'scrooloose/nerdtree'
-    Plugin 'jistr/vim-nerdtree-tabs'
     Plugin 'tpope/vim-fugitive'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
