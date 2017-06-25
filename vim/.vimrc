@@ -10,6 +10,11 @@
     let g:airline_theme = 'base16_solarized'
     "let g:airline_theme = 'base16_monokai'
 
+    let g:ansible_unindent_after_newline = 1
+    let g:ansible_attribute_highlight = "ab"
+    let g:ansible_name_highlight = 'b'
+    let g:ansible_extra_keywords_highlight = 1
+
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
 " }}}
@@ -43,6 +48,8 @@
     Plugin 'TagBar'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'nsf/gocode', {'rtp': 'vim/'}
+    Plugin 'pearofducks/ansible-vim'
+    Plugin 'hashivim/vim-packer'
 
     call vundle#end()
     filetype plugin indent on
