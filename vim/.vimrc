@@ -187,6 +187,18 @@
     augroup END
 " }}}
 
+" Ansible File Options {{{
+    augroup filetype_ansible
+        autocmd!
+        autocmd FileType ansible setlocal tabstop=2
+        autocmd FileType ansible setlocal softtabstop=2
+        autocmd FileType ansible setlocal shiftwidth=2
+        autocmd FileType ansible setlocal autoindent
+        autocmd FileType ansible setlocal smartindent
+        autocmd FileType ansible syntax sync fromstart
+    augroup END
+" }}}
+
 " Various Bundle options {{{
     let g:SimpylFold_docstring_preview=1
     let g:ycm_autoclose_preview_window_after_completion=1
