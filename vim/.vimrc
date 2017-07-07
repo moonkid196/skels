@@ -50,6 +50,7 @@
     Plugin 'nsf/gocode', {'rtp': 'vim/'}
     Plugin 'pearofducks/ansible-vim'
     Plugin 'hashivim/vim-packer'
+    Plugin 'https://github.com/hashivim/vim-terraform'
 
     call vundle#end()
     filetype plugin indent on
