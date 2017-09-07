@@ -1,3 +1,9 @@
+# Defined in /var/folders/2_/9gsv0h1s37g2slyqmn0_7nqh0000gr/T//fish.ICN99T/fish_prompt.fish @ line 7
+
+functions -q prompt_hostname; or function --description "Fill in missing function"
+    echo localhost
+end
+
 function fish_prompt --description 'Write out the prompt'
 	set -l color_cwd
     set -l suffix
