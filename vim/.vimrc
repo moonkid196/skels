@@ -39,7 +39,6 @@
     Plugin 'The-NERD-Commenter'
     Plugin 'Auto-Pairs'
     Plugin 'pythoncomplete'
-    Plugin 'flazz/vim-colorschemes'
     Plugin 'css3-syntax-plus'
     Plugin 'EasyMotion'
     Plugin 'Enhanced-Javascript-syntax'
@@ -51,6 +50,7 @@
     Plugin 'pearofducks/ansible-vim'
     Plugin 'hashivim/vim-packer'
     Plugin 'https://github.com/hashivim/vim-terraform'
+    Plugin 'altercation/vim-colors-solarized'
 
     call vundle#end()
     filetype plugin indent on
