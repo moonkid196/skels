@@ -28,7 +28,7 @@ set -xg CLICOLOR true
 set -xg LSCOLORS "exfxFxBxcxbxdxabagacad"
 set -xg GPG_TTY (tty)
 
-pgrep -x gpg-agent >/dev/null; or gpg-agent --daemon -c --pinentry-program /opt/local/bin/pinentry-curses
+pgrep -x gpg-agent >/dev/null; or gpg-agent --daemon -c
 
 if test "$FISH_BBURKE_STARTAGENT" = "true"
   test -t 1; and startagent
