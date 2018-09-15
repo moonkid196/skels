@@ -28,7 +28,6 @@
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'nvie/vim-flake8'
     Plugin 'hynek/vim-python-pep8-indent'
-    Plugin 'vim-python-virtualenv'
     Plugin 'tfnico/vim-gradle'
     Plugin 'scrooloose/syntastic'
     Plugin 'jnurmine/Zenburn'
@@ -37,7 +36,6 @@
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'The-NERD-Commenter'
-    Plugin 'Auto-Pairs'
     Plugin 'pythoncomplete'
     Plugin 'css3-syntax-plus'
     Plugin 'EasyMotion'
@@ -51,6 +49,7 @@
     Plugin 'hashivim/vim-packer'
     Plugin 'https://github.com/hashivim/vim-terraform'
     Plugin 'altercation/vim-colors-solarized'
+    Plugin 'luochen1990/rainbow'
 
     call vundle#end()
     filetype plugin indent on
@@ -107,6 +106,7 @@
     set incsearch
     set viminfo='1000,f1,<500,:100,@100,/100,!,%
     syntax sync fromstart
+    let g:rainbow_active = 1
 " }}}
 
 " NVim specifics {{{
