@@ -1,3 +1,1 @@
-if command -s pipenv >/dev/null
-    eval (pipenv --completion)
-end
+complete --command pipenv --arguments "(env _PIPENV_COMPLETE=complete-fish COMMANDLINE=(commandline -cp) pipenv)" -f

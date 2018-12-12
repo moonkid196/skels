@@ -10,6 +10,7 @@ set _paths /usr/local/bin /usr/local/sbin $_paths
 set _paths /opt/local/bin /opt/local/sbin $_paths
 set _paths ~/bin $_paths
 set _paths ~/Library/Python/current/bin $_paths
+set _paths ~/.local/bin $_paths
 
 set PATH
 for p in $_paths
