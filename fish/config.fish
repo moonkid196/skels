@@ -6,11 +6,14 @@ set _paths
 # Set all the paths we can think of
 set _paths /bin /sbin $_paths
 set _paths /usr/bin /usr/sbin $_paths
+set _paths /opt/homebrew/bin $_paths
 set _paths /usr/local/bin /usr/local/sbin $_paths
 set _paths /opt/local/bin /opt/local/sbin $_paths
 set _paths ~/bin $_paths
 set _paths ~/Library/Python/current/bin $_paths
 set _paths ~/.local/bin $_paths
+set _paths /opt/facebook/bin $_paths
+set _paths /opt/facebook/hg/bin $_paths
 
 set PATH
 for p in $_paths
