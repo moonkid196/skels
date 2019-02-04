@@ -96,6 +96,7 @@
     set hidden
     set ignorecase
     set smartcase
+    set hlsearch
     set listchars+=tab:>-
     set incsearch
     set viminfo='1000,f1,<500,:100,@100,/100,!,%
@@ -109,6 +110,31 @@
         let g:loaded_python_provider = 1
         let g:python3_host_prog = '/opt/local/bin/python3'
     endif
+" }}}
+
+" Rainbow Parens {{{
+let g:rainbow_conf = {
+\    'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\    'ctermfgs': [9, 3, 4, 6, 2, 5],
+\    'operators': '_,_',
+\    'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\    'separately': {
+\        '*': {},
+\        'tex': {
+\            'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\        },
+\        'lisp': {
+\            'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\        },
+\        'vim': {
+\            'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\        },
+\        'html': {
+\            'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\        },
+\        'css': 0,
+\    }
+\}
 " }}}
 
 " Python Options {{{
@@ -214,6 +240,9 @@
 " }}}
 
 " Better key mappings {{{
+    " Colemak escape
+    inoremap tn <esc>
+
     if has("gui_running")
         " Window Movement
         nnoremap ∆ <c-w><c-j>
@@ -247,26 +276,29 @@
     endif
 
     " Quick-edit VIM
-    nnoremap <leader>ev :edit ~/.vimrc<cr>
-    nnoremap <leader>sv :source ~/.vimrc<cr>
+    if has('nvim')
+        nnoremap <leader>ev :edit ~/.config/nvim/init.vim<cr>
+        nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
+
+    else
+        nnoremap <leader>ev :edit ~/.vimrc<cr>
+        nnoremap <leader>sv :source ~/.vimrc<cr>
+
+    endif
 
     " Buffers
     " Note with :set hidden above, buffers act like they're hidden by default
     nnoremap <tab> :bnext<cr>
     nnoremap <s-tab> :bprevious<cr>
     nnoremap <leader>bd :setlocal bufhidden=delete<cr>
-    nnoremap <leader>bh :setlocal bufhidden=hidden<cr>
+    nnoremap <leader>bs :setlocal buftype=nofile<cr>
 
     " Use Vim 7's tree-based undo
     nnoremap u g-
     nnoremap <c-r> g+
 
     " Toggle highlighting
-    nnoremap <leader>/ :setlocal invhlsearch<cr>
-
-    " Set light/dark
-    nnoremap <f6> :set background=dark<cr>
-    nnoremap <f7> :set background=light<cr>
+    nnoremap <leader>/ :nohlsearch<cr>
 
     " Typing help
     inoremap <c-d> <esc>cc

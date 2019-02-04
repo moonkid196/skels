@@ -24,8 +24,8 @@ set -e _paths
 # Standard Environment Variables
 set -x SHELL (command -s fish)
 set -xg LESS "-emiSRX"
-set -xg VISUAL vim
-set -xg EDITOR vim
+set -xg VISUAL nvim
+set -xg EDITOR nvim
 set -xg CLICOLOR true
 set -xg LSCOLORS "exfxFxBxcxbxdxabagacad"
 set -xg GPG_TTY (tty)
