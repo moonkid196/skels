@@ -7,8 +7,11 @@
 " Configuration needed at bundle load time {{{
     set background=dark
     let g:solarized_base16=1
-    let g:airline_theme = 'base16_solarized'
-    "let g:airline_theme = 'base16_monokai'
+    "let g:airline_theme = 'base16_solarized'
+    let g:airline_theme = 'base16_monokai'
+    set termguicolors
+    let g:monokai_term_italic = 1
+    let g:monokai_gui_italic = 1
 
     let g:ansible_unindent_after_newline = 1
     let g:ansible_attribute_highlight = "ab"
@@ -44,6 +47,7 @@
     Plugin 'hashivim/vim-terraform'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'luochen1990/rainbow'
+    Plugin 'crusoexia/vim-monokai'
 
     call vundle#end()
     filetype plugin indent on
@@ -68,7 +72,7 @@
     "let g:solarized_visibility='high'
     "let g:solarized_contrast='high'
     "let g:solarized_termtrans=1
-    colorscheme solarized
+    colorscheme monokai
     set fileformat=unix
     set encoding=utf-8
     set foldlevel=99
@@ -147,7 +151,7 @@ let g:rainbow_conf = {
         autocmd FileType python setlocal foldlevel=0
         autocmd FileType python setlocal autoindent
         autocmd FileType python setlocal smartindent
-        autocmd FileType python setlocal textwidth=100
+        autocmd FileType python setlocal textwidth=80
         inoremap # X#
     augroup END
 " }}}
@@ -241,7 +245,7 @@ let g:rainbow_conf = {
 
 " Better key mappings {{{
     " Colemak escape
-    inoremap tn <esc>
+    inoremap ,x <esc>
 
     if has("gui_running")
         " Window Movement
