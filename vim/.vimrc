@@ -7,12 +7,8 @@
 " Configuration needed at bundle load time {{{
     set background=dark
     let g:solarized_base16=1
-    "let g:airline_theme = 'base16_solarized'
     let g:airline_theme = 'base16_monokai'
 
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
     let g:monokai_term_italic = 1
     let g:monokai_gui_italic = 1
@@ -72,11 +68,8 @@
     syntax on
     set laststatus=2
 
-    "let g:solarized_termcolors=256
-    "let g:solarized_visibility='high'
-    "let g:solarized_contrast='high'
-    "let g:solarized_termtrans=1
     colorscheme monokai
+    set guicursor=i-r-ci-cr:ver30
     set fileformat=unix
     set encoding=utf-8
     set foldlevel=99
