@@ -49,6 +49,10 @@
     Plugin 'luochen1990/rainbow'
     Plugin 'crusoexia/vim-monokai'
 
+    if filereadable(expand("~/.config/nvim/local-bundles.vim"))
+        source ~/.config/nvim/local-bundles.vim
+    endif
+
     call vundle#end()
     filetype plugin indent on
 " }}}
@@ -109,7 +113,6 @@
     if has('nvim')
         runtime! plugin/python_setup.vim
         let g:loaded_python_provider = 1
-        let g:python3_host_prog = '/opt/local/bin/python3'
     endif
 " }}}
 
@@ -309,3 +312,8 @@ let g:rainbow_conf = {
     onoremap in( :<c-u>normal! f(vi(<cr>
     onoremap il( :<c-u>normal! F)vi(<cr>
 " }}}
+
+" {{{ Local Overrides
+if filereadable(expand("~/.config/nvim/local-config.vim"))
+    source ~/.config/nvim/local-config.vim
+endif
