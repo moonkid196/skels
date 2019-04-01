@@ -1,4 +1,4 @@
-# Defined in /var/folders/1h/lx43yr_1691130c2dt6j14sr62gmhg/T//fish.C262pt/fish_solarized_true.fish @ line 2
+# Defined in /var/folders/1h/lx43yr_1691130c2dt6j14sr62gmhg/T//fish.RX3mty/fish_solarized_true.fish @ line 2
 function fish_solarized_true --description 'Set fish colors to solarized dark (using truecolor)'
 	set -l base03 '002b36'
     set -l base02 '073642'
@@ -26,8 +26,8 @@ function fish_solarized_true --description 'Set fish colors to solarized dark (u
     set -U fish_color_param $blue
     set -U fish_color_comment $base01
     set -U fish_color_match $orange
-    set -U fish_color_search_match --background=$base02
-    set -U fish_color_selection --background=$base02
+    set -U fish_color_search_match --background=$yellow
+    set -U fish_color_selection --background=$yellow
     set -U fish_color_autosuggestion $base01
     set -U fish_color_operator $magenta
     set -U fish_color_escape $red
