@@ -241,9 +241,6 @@ let g:rainbow_conf = {
 " }}}
 
 " Better key mappings {{{
-    " Colemak escape
-    inoremap ,x <esc>
-
     if has("gui_running")
         " Window Movement
         nnoremap ∆ <c-w><c-j>
