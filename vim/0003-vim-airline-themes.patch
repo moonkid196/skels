@@ -1,0 +1,48 @@
+From 17d4258cd9f08814c63f61c2c56623772a3e3d0c Mon Sep 17 00:00:00 2001
+From: Bryan Burke <bburke@baburke.net>
+Date: Mon, 14 Aug 2017 20:47:41 -0400
+Subject: [PATCH 3/4] Fixing base colors
+
+---
+ autoload/airline/themes/base16_solarized.vim | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/autoload/airline/themes/base16_solarized.vim b/autoload/airline/themes/base16_solarized.vim
+index 8026496..e86b264 100644
+--- a/autoload/airline/themes/base16_solarized.vim
++++ b/autoload/airline/themes/base16_solarized.vim
+@@ -32,23 +32,23 @@ let s:gui0E = "#6c71c4"
+ let s:gui0F = "#d33682"
+ 
+ if &background ==# 'dark'
+-    let s:cterm00 = 8
+-    let s:cterm01 = 0
++    let s:cterm00 = 0
++    let s:cterm01 = 8
+     let s:cterm02 = 10
+     let s:cterm03 = 11
+     let s:cterm04 = 12
+     let s:cterm05 = 14
+-    let s:cterm06 = 7
+-    let s:cterm07 = 15
++    let s:cterm06 = 15
++    let s:cterm07 = 7
+ elseif &background ==# 'light'
+-    let s:cterm07 = 8
+-    let s:cterm06 = 0
++    let s:cterm07 = 0
++    let s:cterm06 = 8
+     let s:cterm05 = 10
+     let s:cterm04 = 11
+     let s:cterm03 = 12
+     let s:cterm02 = 14
+-    let s:cterm01 = 7
+-    let s:cterm00 = 15
++    let s:cterm01 = 15
++    let s:cterm00 = 7
+ endif
+ 
+ let s:cterm08 = 1
+-- 
+2.22.0
+

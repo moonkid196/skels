@@ -1,0 +1,51 @@
+From ad656c42f8898e23195de0636b172baf0fda8ff8 Mon Sep 17 00:00:00 2001
+From: Bryan Burke <bburke@baburke.net>
+Date: Sat, 3 Aug 2019 19:42:36 -0700
+Subject: [PATCH] enhancing solarized colors for iTerm
+
+---
+ colors/solarized.vim | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/colors/solarized.vim b/colors/solarized.vim
+index 70f5223..90ce35e 100644
+--- a/colors/solarized.vim
++++ b/colors/solarized.vim
+@@ -136,13 +136,13 @@
+ 
+ " Terminals that support italics
+ let s:terms_italic=[
++            \"iTerm.app",
+             \"rxvt",
+             \"gnome-terminal"
+             \]
+ " For reference only, terminals are known to be incomptible.
+ " Terminals that are in neither list need to be tested.
+ let s:terms_noitalic=[
+-            \"iTerm.app",
+             \"Apple_Terminal"
+             \]
+ if has("gui_running")
+@@ -240,7 +240,7 @@ let colors_name = "solarized"
+ " leave the hex values out entirely in that case and include only cterm colors)
+ " We also check to see if user has set solarized (force use of the
+ " neutral gray monotone palette component)
+-if (has("gui_running") && g:solarized_degrade == 0)
++if (has("gui_running") && g:solarized_degrade == 0) || has("termguicolors")
+     let s:vmode       = "gui"
+     let s:base03      = "#002b36"
+     let s:base02      = "#073642"
+@@ -257,8 +257,8 @@ if (has("gui_running") && g:solarized_degrade == 0)
+     let s:violet      = "#6c71c4"
+     let s:blue        = "#268bd2"
+     let s:cyan        = "#2aa198"
+-    "let s:green       = "#859900" "original
+-    let s:green       = "#719e07" "experimental
++    let s:green       = "#859900" "original
++    "let s:green       = "#719e07" "experimental
+ elseif (has("gui_running") && g:solarized_degrade == 1)
+     " These colors are identical to the 256 color mode. They may be viewed
+     " while in gui mode via "let g:solarized_degrade=1", though this is not
+-- 
+2.22.0
+

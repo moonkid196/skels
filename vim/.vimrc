@@ -6,8 +6,11 @@
 
 " Configuration needed at bundle load time {{{
     set background=dark
-    let g:solarized_base16=1
-    let g:airline_theme = 'base16_monokai'
+    let g:airline_solarized_bg = &background
+    let g:airline_solarized_normal_green = 1
+    let g:airline_solarized_dark_text = 1
+    let g:airline_solarized_dark_inactive_border = 1
+    let g:airline_theme = 'solarized'
 
     set termguicolors
     let g:monokai_term_italic = 1
@@ -72,7 +75,7 @@
     syntax on
     set laststatus=2
 
-    colorscheme monokai
+    colorscheme solarized
     set guicursor=i-r-ci-cr:ver30
     set fileformat=unix
     set encoding=utf-8
@@ -118,7 +121,7 @@
 
 " Rainbow Parens {{{
 let g:rainbow_conf = {
-\    'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\    'guifgs': ['#268bd2', '#cb4b16', '#859900', '#d33682', '#b58900'],
 \    'ctermfgs': [9, 3, 4, 6, 2, 5],
 \    'operators': '_,_',
 \    'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
@@ -126,9 +129,6 @@ let g:rainbow_conf = {
 \        '*': {},
 \        'tex': {
 \            'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\        },
-\        'lisp': {
-\            'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
 \        },
 \        'vim': {
 \            'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
@@ -148,7 +148,7 @@ let g:rainbow_conf = {
         autocmd FileType python setlocal number
         autocmd FileType python let b:python_highlight_all=1
         autocmd FileType python setlocal foldmethod=indent
-        autocmd FileType python setlocal foldlevel=0
+        autocmd FileType python setlocal foldlevel=1
         autocmd FileType python setlocal autoindent
         autocmd FileType python setlocal smartindent
         autocmd FileType python setlocal textwidth=80
