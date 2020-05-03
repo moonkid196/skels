@@ -44,7 +44,7 @@
     Plugin 'mhinz/vim-signify'
     Plugin 'majutsushi/tagbar'
     Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'nsf/gocode', {'rtp': 'vim/'}
+    "Plugin 'mdempsky/gocode',
     Plugin 'pearofducks/ansible-vim'
     Plugin 'hashivim/vim-packer'
     Plugin 'hashivim/vim-terraform'
