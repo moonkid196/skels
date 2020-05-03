@@ -15,6 +15,7 @@
     set termguicolors
     let g:monokai_term_italic = 1
     let g:monokai_gui_italic = 1
+    let g:solarized_contrast = "high"
 
     let g:ansible_unindent_after_newline = 1
     let g:ansible_attribute_highlight = "ab"
@@ -31,7 +32,7 @@
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'tmhedberg/SimpylFold'
     Plugin 'vim-scripts/indentpython.vim'
-    Plugin 'Valloric/YouCompleteMe'
+    "Plugin 'Valloric/YouCompleteMe'
     Plugin 'nvie/vim-flake8'
     Plugin 'vim-syntastic/syntastic'
     Plugin 'scrooloose/nerdtree'
@@ -52,12 +53,30 @@
     Plugin 'luochen1990/rainbow'
     Plugin 'crusoexia/vim-monokai'
 
+    "Plugin 'jlanzarotta/bufexplorer'
+    "Plugin 'prettier/vim-prettier'
+    Plugin 'sbdchd/neoformat'
+    "Plugin 'morhetz/gruvbox'
+    Plugin 'ncm2/ncm2'
+    Plugin 'roxma/nvim-yarp'
+    Plugin 'ncm2/ncm2-jedi'
+    Plugin 'ncm2/ncm2-bufword'
+    Plugin 'ncm2/ncm2-path'
+
     if filereadable(expand("~/.config/nvim/local-bundles.vim"))
         source ~/.config/nvim/local-bundles.vim
     endif
 
     call vundle#end()
     filetype plugin indent on
+" }}}
+
+" {{{
+    " enable ncm2 for all buffers
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+
+    " IMPORTANT: :help Ncm2PopupOpen for more information
+    set completeopt=noinsert,menuone,noselect
 " }}}
 
 " GUI Options {{{
@@ -113,10 +132,10 @@
 " }}}
 
 " NVim specifics {{{
-    if has('nvim')
-        runtime! plugin/python_setup.vim
-        let g:loaded_python_provider = 1
-    endif
+    "if has('nvim')
+        "runtime! plugin/python_setup.vim
+        "let g:loaded_python_provider = 1
+    "endif
 " }}}
 
 " Rainbow Parens {{{
@@ -152,7 +171,8 @@ let g:rainbow_conf = {
         autocmd FileType python setlocal autoindent
         autocmd FileType python setlocal smartindent
         autocmd FileType python setlocal textwidth=80
-        inoremap # X#
+        "inoremap # X#
+        "autocmd FileType python nnoremap <leader>f :call Preserve('%!black --target-version py37 -q -')<cr>
     augroup END
 " }}}
 
@@ -227,50 +247,24 @@ let g:rainbow_conf = {
 " Various Bundle options {{{
     let g:SimpylFold_docstring_preview=1
     let g:ycm_autoclose_preview_window_after_completion=1
-    nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
+    "nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
     nnoremap <C-t> :NERDTreeToggle<cr>
     nnoremap <leader>t :TagbarToggle<cr>
     "let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlPLastMode'
+    let g:ctrlp_cmd = 'CtrlPBuffer'
     let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
-" }}}
-
-" Sessions {{{
-    nnoremap <leader>s1 :mksession! ~/.vim/sessions/1.vim<cr>:wviminfo! ~/.vim/sessions/1.viminfo<cr>
-    nnoremap <leader>s2 :mksession! ~/.vim/sessions/2.vim<cr>:wviminfo! ~/.vim/sessions/2.viminfo<cr>
-
-    nnoremap <leader>o1 :source ~/.vim/sessions/1.vim<cr>:rviminfo! ~/.vim/sessions/1.viminfo<cr>
-    nnoremap <leader>o2 :source ~/.vim/sessions/2.vim<cr>:rviminfo! ~/.vim/sessions/2.viminfo<cr>
 " }}}
 
 " Better key mappings {{{
     if has("gui_running")
-        " Window Movement
-        nnoremap ∆ <c-w><c-j>
-        nnoremap ˚ <c-w><c-k>
-        nnoremap ¬ <c-w><c-l>
-        nnoremap ˙ <c-w><c-h>
-
         " Selections
         nnoremap <space> viw
         nnoremap <m-space> za
     elseif has("nvim")
-        " Window Movement
-        nnoremap <a-j> <c-w><c-j>
-        nnoremap <a-k> <c-w><c-k>
-        nnoremap <a-l> <c-w><c-l>
-        nnoremap <a-h> <c-w><c-h>
-
         " Selections
         nnoremap <space> viw
         nnoremap <a-space> za
     else
-        " Window Movement
-        nnoremap <esc>j <c-w><c-j>
-        nnoremap <esc>k <c-w><c-k>
-        nnoremap <esc>l <c-w><c-l>
-        nnoremap <esc>h <c-w><c-h>
-
         " Selections
         nnoremap <space> viw
         nnoremap <esc><space> za
@@ -317,3 +311,5 @@ let g:rainbow_conf = {
 if filereadable(expand("~/.config/nvim/local-config.vim"))
     source ~/.config/nvim/local-config.vim
 endif
+
+" }}}
