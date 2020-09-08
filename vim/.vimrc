@@ -62,6 +62,7 @@
     Plugin 'ncm2/ncm2-jedi'
     Plugin 'ncm2/ncm2-bufword'
     Plugin 'ncm2/ncm2-path'
+    Plugin 'ncm2/ncm2-go'
 
     if filereadable(expand("~/.config/nvim/local-bundles.vim"))
         source ~/.config/nvim/local-bundles.vim
