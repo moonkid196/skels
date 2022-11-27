@@ -10,11 +10,8 @@
     let g:airline_solarized_normal_green = 1
     let g:airline_solarized_dark_text = 1
     let g:airline_solarized_dark_inactive_border = 1
-    let g:airline_theme = 'solarized'
+    let g:airline_theme = 'base16_solarized'
 
-    set termguicolors
-    let g:monokai_term_italic = 1
-    let g:monokai_gui_italic = 1
     let g:solarized_contrast = "high"
 
     let g:ansible_unindent_after_newline = 1
@@ -32,10 +29,8 @@
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'tmhedberg/SimpylFold'
     Plugin 'vim-scripts/indentpython.vim'
-    "Plugin 'Valloric/YouCompleteMe'
     Plugin 'nvie/vim-flake8'
     Plugin 'vim-syntastic/syntastic'
-    Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-fugitive'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
@@ -45,24 +40,23 @@
     Plugin 'mhinz/vim-signify'
     Plugin 'majutsushi/tagbar'
     Plugin 'ctrlpvim/ctrlp.vim'
-    "Plugin 'mdempsky/gocode',
     Plugin 'pearofducks/ansible-vim'
     Plugin 'hashivim/vim-packer'
     Plugin 'hashivim/vim-terraform'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'luochen1990/rainbow'
     Plugin 'crusoexia/vim-monokai'
-
-    "Plugin 'jlanzarotta/bufexplorer'
-    "Plugin 'prettier/vim-prettier'
     Plugin 'sbdchd/neoformat'
-    "Plugin 'morhetz/gruvbox'
-    Plugin 'ncm2/ncm2'
-    Plugin 'roxma/nvim-yarp'
-    Plugin 'ncm2/ncm2-jedi'
-    Plugin 'ncm2/ncm2-bufword'
-    Plugin 'ncm2/ncm2-path'
-    Plugin 'ncm2/ncm2-go'
+
+    if has("nvim")
+        Plugin 'ncm2/ncm2'
+        Plugin 'roxma/nvim-yarp'
+        Plugin 'ncm2/ncm2-jedi'
+        Plugin 'ncm2/ncm2-bufword'
+        Plugin 'ncm2/ncm2-path'
+        Plugin 'ncm2/ncm2-go'
+        Plugin 'neovim/nvim-lspconfig'
+    endif
 
     if filereadable(expand("~/.config/nvim/local-bundles.vim"))
         source ~/.config/nvim/local-bundles.vim
@@ -73,11 +67,9 @@
 " }}}
 
 " {{{
-    " enable ncm2 for all buffers
-    autocmd BufEnter * call ncm2#enable_for_buffer()
-
-    " IMPORTANT: :help Ncm2PopupOpen for more information
-    set completeopt=noinsert,menuone,noselect
+    if has("nvim")
+        lua require("lsp_config")
+    endif
 " }}}
 
 " GUI Options {{{
@@ -133,10 +125,11 @@
 " }}}
 
 " NVim specifics {{{
-    "if has('nvim')
-        "runtime! plugin/python_setup.vim
-        "let g:loaded_python_provider = 1
-    "endif
+    if has('nvim')
+        set termguicolors
+        let g:monokai_term_italic = 1
+        let g:monokai_gui_italic = 1
+    endif
 " }}}
 
 " Rainbow Parens {{{
@@ -249,7 +242,6 @@ let g:rainbow_conf = {
     let g:SimpylFold_docstring_preview=1
     let g:ycm_autoclose_preview_window_after_completion=1
     "nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
-    nnoremap <C-t> :NERDTreeToggle<cr>
     nnoremap <leader>t :TagbarToggle<cr>
     "let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlPBuffer'
