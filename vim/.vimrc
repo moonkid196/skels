@@ -5,12 +5,13 @@
 " }}}
 
 " Configuration needed at bundle load time {{{
+    let mapleader = ','
     set background=dark
     let g:airline_solarized_bg = &background
     let g:airline_solarized_normal_green = 1
     let g:airline_solarized_dark_text = 1
     let g:airline_solarized_dark_inactive_border = 1
-    let g:airline_theme = 'base16_solarized'
+    let g:airline_theme = 'base16_monokai'
 
     let g:solarized_contrast = "high"
 
@@ -21,48 +22,34 @@
 
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
+
+    let g:ctrlp_cmd = 'CtrlPBuffer'
+    let g:ctrlp_working_path_mode = 'ra'
 " }}}
 
-" Vundle {{{
-    call vundle#begin()
-
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'tmhedberg/SimpylFold'
-    Plugin 'vim-scripts/indentpython.vim'
-    Plugin 'nvie/vim-flake8'
-    Plugin 'vim-syntastic/syntastic'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'easymotion/vim-easymotion'
-    Plugin 'terryma/vim-multiple-cursors'
-    Plugin 'mhinz/vim-signify'
-    Plugin 'majutsushi/tagbar'
-    Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'pearofducks/ansible-vim'
-    Plugin 'hashivim/vim-packer'
-    Plugin 'hashivim/vim-terraform'
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'luochen1990/rainbow'
-    Plugin 'crusoexia/vim-monokai'
-    Plugin 'sbdchd/neoformat'
-
-    if has("nvim")
-        Plugin 'ncm2/ncm2'
-        Plugin 'roxma/nvim-yarp'
-        Plugin 'ncm2/ncm2-jedi'
-        Plugin 'ncm2/ncm2-bufword'
-        Plugin 'ncm2/ncm2-path'
-        Plugin 'ncm2/ncm2-go'
-        Plugin 'neovim/nvim-lspconfig'
-    endif
+" Manual Plugins {{{
+    set rtp+=~/.config/nvim/bundles/vim-fugitive
+    set rtp+=~/.config/nvim/bundles/vim-airline
+    set rtp+=~/.config/nvim/bundles/vim-airline-themes
+    set rtp+=~/.config/nvim/bundles/vim-easymotion
+    set rtp+=~/.config/nvim/bundles/vim-visual-multi
+    set rtp+=~/.config/nvim/bundles/ctrlp.vim
+    set rtp+=~/.config/nvim/bundles/vim-monokai
+    set rtp+=~/.config/nvim/bundles/vim-signify
+    set rtp+=~/.config/nvim/bundles/vim-colors-solarized
+    set rtp+=~/.config/nvim/bundles/rainbow
+    set rtp+=~/.config/nvim/bundles/ncm2
+    set rtp+=~/.config/nvim/bundles/nvim-yarp
+    set rtp+=~/.config/nvim/bundles/ncm2-jedi
+    set rtp+=~/.config/nvim/bundles/ncm2-bufword
+    set rtp+=~/.config/nvim/bundles/ncm2-path
+    set rtp+=~/.config/nvim/bundles/ncm2-go
+    set rtp+=~/.config/nvim/bundles/nvim-lspconfig
 
     if filereadable(expand("~/.config/nvim/local-bundles.vim"))
         source ~/.config/nvim/local-bundles.vim
     endif
 
-    call vundle#end()
     filetype plugin indent on
 " }}}
 
@@ -87,7 +74,7 @@
     syntax on
     set laststatus=2
 
-    colorscheme solarized
+    colorscheme monokai
     set guicursor=i-r-ci-cr:ver30
     set fileformat=unix
     set encoding=utf-8
@@ -106,7 +93,6 @@
     set number
     set wildmode=longest,list
     set cursorline
-    let mapleader = ','
     set cpoptions=
     set undofile
     set undodir=~/.vimundo
@@ -152,6 +138,15 @@ let g:rainbow_conf = {
 \        'css': 0,
 \    }
 \}
+" }}}
+
+" TSX Files {{{
+    augroup filetype_typescriptreact
+        autocmd!
+        autocmd FileType typescriptreact setlocal tabstop=2
+        autocmd FileType typescriptreact setlocal shiftwidth=2
+        autocmd FileType typescriptreact setlocal softtabstop=2
+    augroup END
 " }}}
 
 " Python Options {{{
@@ -238,15 +233,6 @@ let g:rainbow_conf = {
     augroup END
 " }}}
 
-" Various Bundle options {{{
-    let g:SimpylFold_docstring_preview=1
-    let g:ycm_autoclose_preview_window_after_completion=1
-    "nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
-    nnoremap <leader>t :TagbarToggle<cr>
-    "let g:ctrlp_map = '<c-p>'
-    let g:ctrlp_cmd = 'CtrlPBuffer'
-    let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
-" }}}
 
 " Better key mappings {{{
     if has("gui_running")
