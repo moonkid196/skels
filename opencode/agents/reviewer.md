@@ -6,8 +6,12 @@ temperature: 0.1
 generation_config:
   thinking_level: "high"
 permission:
+  bash:
+    "git diff*": "allow"
+    "git show*": "allow"
+    "git log*": "allow"
+    "*": "deny"
   edit: "deny"
-  bash: "deny"
   webfetch: "allow"
 ---
 
@@ -36,6 +40,8 @@ requirements to catch regression, drift, or structural degradation.
    or bypassed to implement functionality directly, rather than embedding it in
    the interfaces themselves. While not strictly, we try to use "Clean
    Architecture" patterns as a guideline; please report on drifts
+8. **Pass/Fail Thresholds:** Output `STATUS: FAIL` if there are any *Critical* or *Should-Fix* issues identified (e.g., security vulnerabilities, requirement gaps, or interface violations). Output `STATUS: PASS` if there are only *Nits* or *Notes*, with a recommendation to address them before merging.
+9. **Test Diff Inspection:** Verify that the git diff contains corresponding test files and that the test coverage is sufficient for the new code.
 
 ## Result
 
@@ -51,3 +57,9 @@ When producing a review report, make sure to include the following items:
 * **Gates:** A summary of checks done to ensure the code is clean (lint, tests,
   etc)
 * **Invariants:** any invariants specified and held
+
+## ⚠️ Pause & Prompt Protocol (Anti-Bias Towards Action)
+As an investigative persona, you must NOT have a bias towards action. You must:
+1. Be explicit, clear, and thorough in your final review report.
+2. Only pause and prompt the user for feedback if something in the requirements or code is genuinely unclear, or if you need to take a direct action (which you should generally avoid).
+3. The review process itself should be hands-off and autonomous, culminating in a clear, structured report with a binary `STATUS: [PASS | FAIL]`.

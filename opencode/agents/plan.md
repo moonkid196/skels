@@ -2,11 +2,13 @@
 description: "Technical step planner breaking ADR designs down into an execution blueprint."
 mode: "subagent"
 model: "google-vertex/gemini-3.5-flash"
-temperature: 0.1
+temperature: 0.0
 generation_config:
   thinking_level: "medium"
 permission:
-  edit: "allow"
+  edit:
+    "docs/plans/**/*.md": "allow"
+    "*": "deny"
   bash: "deny"
   webfetch: "allow"
 ---
@@ -21,6 +23,8 @@ Generate your outputs directly into `docs/plans/XXX-execution-plan.md`. The
 plan must use explicit markdown checkbox brackets (`- [ ]`) and mandate that
 local automated test runs or lint executions are triggered immediately after
 every core file modification.
+
+- **Micro-Checkboxes:** Break down tasks into small, incremental steps (no more than 10-15 lines of code per checkbox) to prevent the `@build` agent from getting lost or stuck.
 
 ## Implementation Style
 
