@@ -1,8 +1,10 @@
 ---
 description: "General-purpose developer assistant for ad-hoc queries, quick fixes, and simple tasks."
 mode: "primary"
-model: "gemini-3.5-flash"
+model: "google-vertex/gemini-3.5-flash"
 temperature: 0.5
+generation_config:
+  thinking_level: "medium"
 permission:
   edit: "allow"
   bash: "allow"
