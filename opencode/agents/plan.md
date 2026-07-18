@@ -1,8 +1,10 @@
 ---
 description: "Technical step planner breaking ADR designs down into an execution blueprint."
 mode: "subagent"
-model: "gemini-3.5-flash"
+model: "google-vertex/gemini-3.5-flash"
 temperature: 0.1
+generation_config:
+  thinking_level: "medium"
 permission:
   edit: "allow"
   bash: "deny"
@@ -19,3 +21,9 @@ Generate your outputs directly into `docs/plans/XXX-execution-plan.md`. The
 plan must use explicit markdown checkbox brackets (`- [ ]`) and mandate that
 local automated test runs or lint executions are triggered immediately after
 every core file modification.
+
+## Implementation Style
+
+Direct the build subagent to implement the features using a strict TDD loop.
+Additionally make sure to describe each cycle, feature, etc. in TDD terms, so
+the build subagent knows how to do that.
