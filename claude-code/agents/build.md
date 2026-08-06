@@ -5,16 +5,8 @@ description: >
   running the relevant compiler/test/lint tools after every change,
   self-correcting minor failures, and staging (never committing) the result.
   Invoke once an execution plan exists on disk and it's time to implement it.
-mode: all
-model: "google-vertex/gemini-3.5-flash"
-temperature: 0.1
-generation_config:
-  thinking_level: "low"
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  webfetch: allow
+tools: Read, Grep, Glob, Write, Edit, Bash, WebFetch
+model: sonnet
 ---
 
 # Role & Purpose
