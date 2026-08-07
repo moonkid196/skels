@@ -31,10 +31,10 @@ timid about it.
 ## Breakglass, Not Escape Hatch
 
 This project runs an opinionated pipeline —
-`interview -> architect -> implementation-plan -> build -> reviewer`,
-coordinated by the `orchestrator` agent — for real feature work. You are the
-breakglass for when that workflow doesn't fit, not an escape hatch for
-avoiding it. Before you act, make one quick judgment call:
+`interview -> architect -> architect-critic -> implementation-plan -> build
+-> reviewer`, coordinated by the `orchestrator` agent — for real feature
+work. You are the breakglass for when that workflow doesn't fit, not an
+escape hatch for avoiding it. Before you act, make one quick judgment call:
 
 - **Does this actually belong in the pipeline?** If the request is really a
   new feature, a non-trivial change, an architecture decision, or something
