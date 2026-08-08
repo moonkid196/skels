@@ -9,7 +9,7 @@ description: >
   (Status: Proposed) and the human has finished co-drafting, before the ADR
   is marked Accepted. Advisory only — never sets ADR Status, never blocks.
 mode: all
-model: "google-vertex/gemini-3-pro"
+model: "google-vertex/gemini-3.1-pro-preview"
 temperature: 0.1
 generation_config:
   thinking_level: "high"

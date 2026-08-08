@@ -7,7 +7,7 @@ description: >
   Approved and no ADR exists yet, or to produce a standalone ADR for a design
   decision that needs one.
 mode: all
-model: "google-vertex/gemini-3-pro"
+model: "google-vertex/gemini-3.1-pro-preview"
 temperature: 0.2
 generation_config:
   thinking_level: "high"
