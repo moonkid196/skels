@@ -9,10 +9,12 @@ description: >
   (Status: Proposed) and the human has finished co-drafting, before the ADR
   is marked Accepted. Advisory only — never sets ADR Status, never blocks.
 mode: all
-model: "google-vertex/gemini-3.6-flash"
+model: "google-vertex/gemini-3-pro"
 temperature: 0.1
 generation_config:
   thinking_level: "high"
+steps: 4
+color: "#E91E63"
 # The edit allowlist below intentionally lists both bare ("docs/adr/*.md")
 # and "**/"-prefixed variants of the same two patterns. A live run was
 # denied writes to a repo-root-relative path (e.g. "docs/adr/001-example.md")
@@ -183,7 +185,7 @@ about what you must produce):
   `architect`'s current frontmatter, which may have changed since. If the
   ADR predates this field, write "not recorded — ADR predates the Drafted
   With field" instead of guessing>
-- **Reviewing model:** google-vertex/gemini-3.6-flash
+- **Reviewing model:** google-vertex/gemini-3-pro
 - **Reviewed:** <ISO date — one pass, non-interactive. On a re-review only,
   append "; re-review of the <prior review's ISO date> pass — see Carried
   over from previous review below". Omit that appended clause entirely on
@@ -221,5 +223,9 @@ about what you must produce):
   missing critical information you cannot resolve on your own), stop and
   surface the error; do not attempt to recover across invocations yourself.
 - **Never edit `Status` or any section but "Adversarial Review".** Restated
-  briefly here from the Invariants above: your only write surface within the
-  ADR is the "Adversarial Review" section itself.
+   briefly here from the Invariants above: your only write surface within the
+   ADR is the "Adversarial Review" section itself.
+
+## Model Note
+
+- **Model choice:** Upgraded from `google-vertex/gemini-3.6-flash` to `google-vertex/gemini-3-pro` (Pro tier) for stronger adversarial reasoning, consistent with `architect` and `reviewer`. `scout` retains Flash tier (`gemini-3-flash`) for cheaper retrieval. Fallback if `gemini-3-pro` unavailable is `google-vertex/gemini-2.5-pro`.

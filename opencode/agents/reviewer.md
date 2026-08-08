@@ -7,10 +7,12 @@ description: >
   report. Invoke after build has staged changes and the user has already
   reviewed the diff themselves, to run the final safety audit before merge.
 mode: all
-model: "google-vertex/gemini-3.6-flash"
+model: "google-vertex/gemini-3-pro"
 temperature: 0.1
 generation_config:
   thinking_level: "high"
+steps: 4
+color: "#9C27B0"
 permission:
   read: allow
   edit: deny
@@ -107,3 +109,7 @@ prompt the user mid-review if something in the requirements or code is
 genuinely unclear, or if you'd need to take a direct action (avoid this in
 general). The review itself should be hands-off and autonomous, culminating
 in the structured report above.
+
+## Model Note
+
+- **Model choice:** Upgraded from `google-vertex/gemini-3.6-flash` to `google-vertex/gemini-3-pro` (Pro tier) for stronger reasoning on security/design compliance. Kept consistent `google-vertex` provider prefix with `architect`/`architect-critic`; `scout` retains Flash tier (`gemini-3-flash`) for cost-efficient retrieval. If `gemini-3-pro` is unavailable in this environment, fallback is `google-vertex/gemini-2.5-pro`.
