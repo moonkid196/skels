@@ -57,7 +57,7 @@ repo's skills. This means two related but distinct things:
   six-phase feature pipeline. Each one is also independently invokable for
   its specialty on its own: `architect` for producing a durable ADR when a
   design decision needs one, `scout` for live web-search grounding and version
-  verification of an RFC/ADR draft (read-only, `google-vertex/gemini-3-flash`),
+  verification of an RFC/ADR draft (read-only, `google-vertex/gemini-3.6-flash`),
   `architect-critic` for a one-shot adversarial critique of an already-drafted
   ADR (advisory only), `implementation-plan` for turning an accepted ADR into
   a concrete, file-by-file execution checklist, `interview` for drawing out
@@ -121,8 +121,8 @@ that subagent was invoked to do.
 
 When the user requests system design, RFC/ADR creation, or technical architecture, execute this **verification loop** (per external PRD §3.1 / `multi-agent-system-prd.md`):
 
-1. **Initial Draft:** Pass requirements/PRD to `@architect` to generate an initial system specification / ADR draft (`Status: Proposed`). `@architect` runs `google-vertex/gemini-3-pro` (Pro tier) for synthesis.
-2. **Verification Pass:** Pass `@architect`'s spec **directly** to `@scout` with the prompt: *"Perform web searches to audit all library versions, API methods, and framework assumptions in this RFC. Verify every versioned claim against live web data."* `@scout` runs `google-vertex/gemini-3-flash` (Flash tier, cheaper retrieval) with `edit: deny`, `bash: deny`, `webfetch/websearch: allow`.
+1. **Initial Draft:** Pass requirements/PRD to `@architect` to generate an initial system specification / ADR draft (`Status: Proposed`). `@architect` runs `google-vertex/gemini-3.1-pro-preview` (Pro tier) for synthesis.
+2. **Verification Pass:** Pass `@architect`'s spec **directly** to `@scout` with the prompt: *"Perform web searches to audit all library versions, API methods, and framework assumptions in this RFC. Verify every versioned claim against live web data."* `@scout` runs `google-vertex/gemini-3.6-flash` (Flash tier, cheaper retrieval) with `edit: deny`, `bash: deny`, `webfetch/websearch: allow`.
 3. **Audit Evaluation:**
    - **If `@scout` outputs `STATUS: PASSED`:** Loop exits. Proceed to step 4.
    - **If `@scout` outputs `STATUS: DISCREPANCIES FOUND`:** Re-invoke `@architect` with **both** the original RFC and `@scout`'s discrepancy report (audit table + details), requesting a revised design that addresses every flagged mismatch.
@@ -137,7 +137,7 @@ This loop is **part of the architecture phase** — it does not reorder other pi
 - **Bounded refinement exit:** The scout loop is bounded (max 2 refinements). This is documented here and in `@architect` and `@scout` so all three agree on the bound. Reference external PRD loop for authority.
 - **Engine-level recursion guard:** `subagent_depth: 1` in `opencode` config (see `.opencode/opencode.json` / `opencode.jsonc`) prevents any subagent from launching secondary subagents. Loop control remains 100% with the orchestrator.
 - **Prompt-level recursion prevention (defense-in-depth):** Even with the engine guard, this prompt explicitly forbids subagents from delegating: `architect`, `scout`, `architect-critic`, `reviewer`, `interview`, `implementation-plan`, and `build` never invoke other subagents themselves; only the orchestrator chains them. This is redundant with `subagent_depth: 1` and must stay documented as layered protection.
-- **Cost optimization:** Web retrieval stays on Flash (`gemini-3-flash`), design/review stays on Pro (`gemini-3-pro`), build/interview stay on `meta/muse-spark-1.2`.
+- **Cost optimization:** Web retrieval stays on Flash (`google-vertex/gemini-3.6-flash`), design/review stays on Pro (`google-vertex/gemini-3.1-pro-preview`), build/interview stay on `meta/muse-spark-1.2`.
 
 ## Proactive Delegation Rules
 

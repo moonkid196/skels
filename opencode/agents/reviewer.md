@@ -112,4 +112,4 @@ in the structured report above.
 
 ## Model Note
 
-- **Model choice:** Upgraded from `google-vertex/gemini-3.6-flash` to `google-vertex/gemini-3-pro` (Pro tier) for stronger reasoning on security/design compliance. Kept consistent `google-vertex` provider prefix with `architect`/`architect-critic`; `scout` retains Flash tier (`gemini-3-flash`) for cost-efficient retrieval. If `gemini-3-pro` is unavailable in this environment, fallback is `google-vertex/gemini-2.5-pro`.
+- **Model choice:** Upgraded from `google-vertex/gemini-3.6-flash` to `google-vertex/gemini-3.1-pro-preview` (Pro tier) for stronger reasoning on security/design compliance. Kept consistent `google-vertex` provider prefix with `architect`/`architect-critic`; `scout` retains Flash tier (`google-vertex/gemini-3.6-flash`) for cost-efficient retrieval. If `gemini-3.1-pro-preview` is unavailable in this environment, fallback is `google-vertex/gemini-2.5-pro`.

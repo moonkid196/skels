@@ -185,7 +185,7 @@ about what you must produce):
   `architect`'s current frontmatter, which may have changed since. If the
   ADR predates this field, write "not recorded — ADR predates the Drafted
   With field" instead of guessing>
-- **Reviewing model:** google-vertex/gemini-3-pro
+- **Reviewing model:** google-vertex/gemini-3.1-pro-preview
 - **Reviewed:** <ISO date — one pass, non-interactive. On a re-review only,
   append "; re-review of the <prior review's ISO date> pass — see Carried
   over from previous review below". Omit that appended clause entirely on
@@ -228,4 +228,4 @@ about what you must produce):
 
 ## Model Note
 
-- **Model choice:** Upgraded from `google-vertex/gemini-3.6-flash` to `google-vertex/gemini-3-pro` (Pro tier) for stronger adversarial reasoning, consistent with `architect` and `reviewer`. `scout` retains Flash tier (`gemini-3-flash`) for cheaper retrieval. Fallback if `gemini-3-pro` unavailable is `google-vertex/gemini-2.5-pro`.
+- **Model choice:** Upgraded from `google-vertex/gemini-3.6-flash` to `google-vertex/gemini-3.1-pro-preview` (Pro tier) for stronger adversarial reasoning, consistent with `architect` and `reviewer`. `scout` retains Flash tier (`google-vertex/gemini-3.6-flash`) for cheaper retrieval. Fallback if `gemini-3.1-pro-preview` unavailable is `google-vertex/gemini-2.5-pro`.

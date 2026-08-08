@@ -9,7 +9,6 @@ model: "google-vertex/gemini-3.6-flash"
 temperature: 0.1
 generation_config:
   thinking_level: "medium"
-steps: 4
 color: "#FF9800"
 permission:
   read: allow
