@@ -5,7 +5,7 @@ description: >
   versions against live web data. Verify all library versions, API methods,
   and framework assumptions in an RFC/ADR draft via live web search.
 mode: subagent
-model: "google-vertex/gemini-3-flash"
+model: "google-vertex/gemini-3.6-flash"
 temperature: 0.1
 generation_config:
   thinking_level: "medium"
