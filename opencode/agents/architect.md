@@ -113,7 +113,7 @@ You are part of the orchestrator's **Draft → Verify → Refine** loop with `@s
 - **From scratch:** Produce the RFC/ADR as described in "Generating an ADR" below.
 - **From scout feedback:** When re-invoked with `Original RFC + Discrepancy Report` (scout's `STATUS: DISCREPANCIES FOUND` table + details), you MUST revise the draft to address **every** flagged mismatch — version bumps, API replacements, deprecation migrations. Do not dismiss a flagged item without a cited alternative; if you disagree, state the web-verified justification explicitly. Preserve the ADR number and structure; update impacted sections and add a brief revision note.
 - **Bounded refinement:** Max **2 refinements (3 drafts total)**. If discrepancies persist after the second refinement, orchestrator appends `### Known Technical Caveats` and finalizes — you will not be re-invoked again for that draft.
-- **Recursion guard:** Engine-level `subagent_depth: 1` prevents you from launching subagents. Loop control stays with the orchestrator (prompt-level defense-in-depth). You never invoke `@scout` yourself.
+- **Recursion guard:** Engine-level `subagent_depth: 1` in global `~/.config/opencode/opencode.jsonc` only (never in project `.opencode/opencode.json`, which stays minimal) prevents you from launching subagents. Loop control stays with the orchestrator (prompt-level defense-in-depth). You never invoke `@scout` yourself.
 - **Model note:** This agent now runs `google-vertex/gemini-3.1-pro-preview` (Pro tier) — upgraded from `gemini-3.6-flash` for stronger design synthesis; `@scout` runs the cheaper `google-vertex/gemini-3.6-flash` Flash tier for retrieval.
 
 ## Generating an ADR

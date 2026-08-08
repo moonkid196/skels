@@ -135,7 +135,7 @@ This loop is **part of the architecture phase** — it does not reorder other pi
 ## Guardrails
 
 - **Bounded refinement exit:** The scout loop is bounded (max 2 refinements). This is documented here and in `@architect` and `@scout` so all three agree on the bound. Reference external PRD loop for authority.
-- **Engine-level recursion guard:** `subagent_depth: 1` in `opencode` config (see `.opencode/opencode.json` / `opencode.jsonc`) prevents any subagent from launching secondary subagents. Loop control remains 100% with the orchestrator.
+- **Engine-level recursion guard:** `subagent_depth: 1` in global `~/.config/opencode/opencode.jsonc` only — never edit project `.opencode/opencode.json` (project config stays minimal: `agent` model overrides only, no `provider`/`default_agent`/`subagent_depth` blocks) — prevents any subagent from launching secondary subagents. Loop control remains 100% with the orchestrator.
 - **Prompt-level recursion prevention (defense-in-depth):** Even with the engine guard, this prompt explicitly forbids subagents from delegating: `architect`, `scout`, `architect-critic`, `reviewer`, `interview`, `implementation-plan`, and `build` never invoke other subagents themselves; only the orchestrator chains them. This is redundant with `subagent_depth: 1` and must stay documented as layered protection.
 - **Cost optimization:** Web retrieval stays on Flash (`google-vertex/gemini-3.6-flash`), design/review stays on Pro (`google-vertex/gemini-3.1-pro-preview`), build/interview stay on `meta/muse-spark-1.2`.
 

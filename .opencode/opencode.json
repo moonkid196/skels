@@ -1,24 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "orchestrator",
-  "subagent_depth": 1,
-  "provider": {
-    "google": {
-      "options": {
-        "google_search": true
-      }
-    },
-    "meta": {
-      "models": {
-        "muse-spark-1.2": {
-          "variants": {
-            "default": "high",
-            "fast": "low"
-          }
-        }
-      }
-    }
-  },
   "agent": {
     "orchestrator": {
       "model": "meta/muse-spark-1.2-contributor"

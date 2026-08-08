@@ -67,7 +67,7 @@ You are part of the orchestrator's **Draft → Verify → Refine** loop:
 
 - Orchestrator flow: `Draft via @architect → Verify via @scout → Evaluate: PASSED exit / DISCREPANCIES FOUND re-invoke @architect with RFC + report`.
 - **Max 2 refinements (3 drafts total).** If discrepancies persist after the second refinement, orchestrator appends `### Known Technical Caveats` and finalizes — you do not loop yourself.
-- **Recursion guard:** Engine-level `subagent_depth: 1` prevents you from launching secondary subagents. You never delegate; loop control stays with the orchestrator (prompt-level defense-in-depth).
+- **Recursion guard:** Engine-level `subagent_depth: 1` in global `~/.config/opencode/opencode.jsonc` only (never in project `.opencode/opencode.json`, which stays minimal) prevents you from launching secondary subagents. You never delegate; loop control stays with the orchestrator (prompt-level defense-in-depth).
 
 ## Constraints
 
