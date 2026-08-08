@@ -9,7 +9,7 @@ description: >
   (Status: Proposed) and the human has finished co-drafting, before the ADR
   is marked Accepted. Advisory only — never sets ADR Status, never blocks.
 mode: all
-model: "google-vertex/gemini-3.5-flash"
+model: "google-vertex/gemini-3.6-flash"
 temperature: 0.1
 generation_config:
   thinking_level: "high"
@@ -183,7 +183,7 @@ about what you must produce):
   `architect`'s current frontmatter, which may have changed since. If the
   ADR predates this field, write "not recorded — ADR predates the Drafted
   With field" instead of guessing>
-- **Reviewing model:** google-vertex/gemini-3.5-flash
+- **Reviewing model:** google-vertex/gemini-3.6-flash
 - **Reviewed:** <ISO date — one pass, non-interactive. On a re-review only,
   append "; re-review of the <prior review's ISO date> pass — see Carried
   over from previous review below". Omit that appended clause entirely on

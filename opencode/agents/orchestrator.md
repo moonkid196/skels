@@ -9,10 +9,10 @@ description: >
   rather than doing that work itself. Intended as the default entrypoint for
   interactive opencode sessions.
 mode: primary
-model: "google-vertex/gemini-3.5-flash"
+model: "meta/muse-spark-1.2"
 temperature: 0.1
 generation_config:
-  thinking_level: "low"
+  thinking_level: "medium"
 permission:
   bash:
     "git status*": allow

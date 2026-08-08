@@ -179,13 +179,13 @@ User request -> interview -> architect -> architect-critic (advisory) -> impleme
 
 | Phase | Subagent | Model | Trigger | Hold condition |
 |---|---|---|---|---|
-| 1. Problem refinement | `interview` | `google-vertex/gemini-3.5-flash` (medium) | New feature idea or change request with no PRD on disk | Do not advance until the PRD's status is `Approved` |
-| 2a. Draft ADR | `architect` | `google-vertex/gemini-3.5-flash` (high) | Approved PRD exists, no ADR yet | Human co-drafts; ADR left `Proposed` |
-| 2b. Adversarial review | `architect-critic` | `google-vertex/gemini-3.5-flash` (high) | An ADR draft exists (`Proposed`) and human finished co-drafting | Runs once, non-interactively; **advisory** — does not gate `Accepted` |
+| 1. Problem refinement | `interview` | `meta/muse-spark-1.2` (high) — effective `meta/muse-spark-1.2-contributor` via `opencode.json` | New feature idea or change request with no PRD on disk | Do not advance until the PRD's status is `Approved` |
+| 2a. Draft ADR | `architect` | `google-vertex/gemini-3.6-flash` (high) | Approved PRD exists, no ADR yet | Human co-drafts; ADR left `Proposed` |
+| 2b. Adversarial review | `architect-critic` | `google-vertex/gemini-3.6-flash` (high) | An ADR draft exists (`Proposed`) and human finished co-drafting | Runs once, non-interactively; **advisory** — does not gate `Accepted` |
 | 3. Cross-repo sequencing | `implementation-plan` (meta invocation), then `general` (ticket filing) | — | ADR reaches `Accepted` and its Impacted Components spans more than one repo | Automatic, not opt-in — see §3. The orchestrating session delegates sequencing to `implementation-plan`, which returns the sequencing doc plus a structured per-milestone ticket-filing report; the orchestrating session then delegates the actual ticket creation to `general`, which also stitches the resulting ticket IDs back into the sequencing doc. Skip entirely for single-repo ADRs. |
-| 4. Task planning | `implementation-plan` | `google-vertex/gemini-3.5-flash` (medium) | ADR is accepted (and, for a multi-repo epic, this milestone's dependencies/gating are satisfied per the sequencing doc) | — |
-| 5. Implementation | `build` | `google-vertex/gemini-3.5-flash` (low) | An execution plan exists on disk | — |
-| 6. Review | `reviewer` | `google-vertex/gemini-3.5-flash` (high) | `build` reports all checklist items done and changes staged | **Pause and let the user review the staged `git diff` themselves first** — only invoke `reviewer` after they've looked it over |
+| 4. Task planning | `implementation-plan` | `meta/muse-spark-1.2` (high) — effective `meta/muse-spark-1.2-contributor` via `opencode.json` | ADR is accepted (and, for a multi-repo epic, this milestone's dependencies/gating are satisfied per the sequencing doc) | — |
+| 5. Implementation | `build` | `meta/muse-spark-1.2` (medium) — effective `meta/muse-spark-1.2-contributor` via `opencode.json` | An execution plan exists on disk | — |
+| 6. Review | `reviewer` | `google-vertex/gemini-3.6-flash` (high) | `build` reports all checklist items done and changes staged | **Pause and let the user review the staged `git diff` themselves first** — only invoke `reviewer` after they've looked it over |
 
 Step 2b runs once per ADR draft in the normal flow and is advisory — it
 never blocks `Proposed -> Accepted`, which remains a human decision, now an

@@ -7,7 +7,7 @@ description: >
   Approved and no ADR exists yet, or to produce a standalone ADR for a design
   decision that needs one.
 mode: all
-model: "google-vertex/gemini-3.5-flash"
+model: "google-vertex/gemini-3.6-flash"
 temperature: 0.2
 generation_config:
   thinking_level: "high"
@@ -122,7 +122,7 @@ format:
 - **Drafted With:** [the exact model identifier and thinking_level/
   temperature you are actually running as right now — not a bare alias.
   Your own environment context states an exact model ID; record that, plus
-  whatever effort setting applies (e.g. `google-vertex/gemini-3.5-flash
+  whatever effort setting applies (e.g. `google-vertex/gemini-3.6-flash
   (thinking_level: high)`). Stamp this as a recorded fact when you draft
   the ADR; `architect-critic` reads it rather than inferring from your
   frontmatter, which may have changed by review time.]
@@ -156,7 +156,7 @@ Handle error propagation with explicit tracking/wrapping.
 ## Adversarial Review
 - **Drafting model:** [left for `architect-critic` to fill in from
   this ADR's own §1 Metadata "Drafted With" field]
-- **Reviewing model:** [e.g., google-vertex/gemini-3.5-flash]
+- **Reviewing model:** [e.g., google-vertex/gemini-3.6-flash]
 - **Reviewed:** [Not yet reviewed — architect-critic has not run]
 - **Pass 1 — Paradigm verdict:** [SOUND | IMPROVABLE | UNSOUND]
   - Priorities weighed (in order): operational burden; cost control;

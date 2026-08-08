@@ -7,10 +7,10 @@ description: >
   when the workflow doesn't fit — not a way to skip the pipeline for work
   that belongs in it.
 mode: all
-model: "google-vertex/gemini-3.5-flash"
+model: "meta/muse-spark-1.2"
 temperature: 0.5
 generation_config:
-  thinking_level: "medium"
+  thinking_level: "high"
 permission:
   read: allow
   edit: allow

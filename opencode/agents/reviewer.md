@@ -7,7 +7,7 @@ description: >
   report. Invoke after build has staged changes and the user has already
   reviewed the diff themselves, to run the final safety audit before merge.
 mode: all
-model: "google-vertex/gemini-3.5-flash"
+model: "google-vertex/gemini-3.6-flash"
 temperature: 0.1
 generation_config:
   thinking_level: "high"

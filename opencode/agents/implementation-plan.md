@@ -5,10 +5,10 @@ description: >
   deterministic, file-by-file TDD checklist in docs/plans/. Invoke once an
   ADR's status is accepted and no execution plan exists yet for it.
 mode: all
-model: "google-vertex/gemini-3.5-flash"
+model: "meta/muse-spark-1.2"
 temperature: 0.0
 generation_config:
-  thinking_level: "medium"
+  thinking_level: "high"
 permission:
   read: allow
   edit:

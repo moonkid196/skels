@@ -7,10 +7,10 @@ description: >
   the user proposes a new feature or an ambiguous change request that has no
   written PRD yet, or when an existing PRD's status is still Draft.
 mode: all
-model: "google-vertex/gemini-3.5-flash"
+model: "meta/muse-spark-1.2"
 temperature: 0.7
 generation_config:
-  thinking_level: "medium"
+  thinking_level: "high"
 permission:
   read: allow
   edit:
