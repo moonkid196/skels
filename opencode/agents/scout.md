@@ -17,7 +17,12 @@ permission:
   list: allow
   edit:
     "*": deny
-  bash: deny
+  bash:
+    "git show*": ask
+    "git log*": ask
+    "git diff*": ask
+    "git status*": ask
+    "*": deny
   webfetch: allow
   websearch: allow
 ---

@@ -36,7 +36,12 @@ permission:
     "docs/adr/**/*.svg": allow
     "**/docs/adr/*.svg": allow
     "**/docs/adr/**/*.svg": allow
-  bash: deny
+  bash:
+    "git show*": ask
+    "git log*": ask
+    "git diff*": ask
+    "git status*": ask
+    "*": deny
   webfetch: allow
   websearch: allow
   question: allow
