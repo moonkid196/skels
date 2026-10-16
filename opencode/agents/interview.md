@@ -19,6 +19,10 @@ permission:
     "**/docs/prd/**/*.md": allow
     "**/docs/prd/*.svg": allow
     "**/docs/prd/**/*.svg": allow
+    "docs/prd/*.md": allow
+    "docs/prd/**/*.md": allow
+    "docs/prd/*.svg": allow
+    "docs/prd/**/*.svg": allow
   bash: deny
   webfetch: allow
   websearch: allow

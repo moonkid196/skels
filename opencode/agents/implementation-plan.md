@@ -13,8 +13,12 @@ permission:
   read: allow
   edit:
     "*": deny
+    "docs/plans/*.md": allow
+    "docs/plans/**/*.md": allow
     "**/docs/plans/*.md": allow
     "**/docs/plans/**/*.md": allow
+    "docs/plans/*.svg": allow
+    "docs/plans/**/*.svg": allow
     "**/docs/plans/*.svg": allow
     "**/docs/plans/**/*.svg": allow
   # Read-only, cross-repo inspection only — never a blanket grant. Mirrors
