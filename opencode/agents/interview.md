@@ -7,7 +7,7 @@ description: >
   the user proposes a new feature or an ambiguous change request that has no
   written PRD yet, or when an existing PRD's status is still Draft.
 mode: all
-model: "meta/muse-spark-1.2"
+model: "meta/muse-spark-1.3"
 temperature: 0.7
 generation_config:
   thinking_level: "high"

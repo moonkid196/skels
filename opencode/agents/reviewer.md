@@ -7,11 +7,11 @@ description: >
   report. Invoke after build has staged changes and the user has already
   reviewed the diff themselves, to run the final safety audit before merge.
 mode: all
-model: "google-vertex/gemini-3.1-pro-preview"
+model: "google-vertex/gemini-3.1-pro-preview-customtools"
 temperature: 0.1
 generation_config:
   thinking_level: "high"
-steps: 4
+steps: 24
 color: "#9C27B0"
 permission:
   read: allow

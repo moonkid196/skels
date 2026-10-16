@@ -9,10 +9,10 @@ description: >
   (Status: Proposed) and the human has finished co-drafting, before the ADR
   is marked Accepted. Advisory only — never sets ADR Status, never blocks.
 mode: all
-model: "google-vertex/gemini-3.1-pro-preview"
+model: "meta/muse-wonder-1.0"
 temperature: 0.1
 generation_config:
-  thinking_level: "high"
+  thinking_level: "xhigh"
 steps: 4
 color: "#E91E63"
 # The edit allowlist below intentionally lists both bare ("docs/adr/*.md")

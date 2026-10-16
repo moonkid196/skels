@@ -7,7 +7,7 @@ description: >
   when the workflow doesn't fit — not a way to skip the pipeline for work
   that belongs in it.
 mode: all
-model: "meta/muse-spark-1.2"
+model: "meta/muse-spark-1.3"
 temperature: 0.5
 generation_config:
   thinking_level: "high"

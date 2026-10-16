@@ -9,7 +9,7 @@ description: >
   rather than doing that work itself. Intended as the default entrypoint for
   interactive opencode sessions.
 mode: primary
-model: "meta/muse-spark-1.2"
+model: "meta/muse-spark-1.3"
 temperature: 0.1
 generation_config:
   thinking_level: "medium"

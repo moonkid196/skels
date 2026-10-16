@@ -5,7 +5,7 @@ description: >
   deterministic, file-by-file TDD checklist in docs/plans/. Invoke once an
   ADR's status is accepted and no execution plan exists yet for it.
 mode: all
-model: "meta/muse-spark-1.2"
+model: "meta/muse-spark-1.3"
 temperature: 0.0
 generation_config:
   thinking_level: "high"

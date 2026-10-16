@@ -6,7 +6,7 @@ description: >
   self-correcting minor failures, and staging (never committing) the result.
   Invoke once an execution plan exists on disk and it's time to implement it.
 mode: all
-model: "meta/muse-spark-1.2"
+model: "meta/muse-spark-1.3"
 temperature: 0.1
 generation_config:
   thinking_level: "medium"
